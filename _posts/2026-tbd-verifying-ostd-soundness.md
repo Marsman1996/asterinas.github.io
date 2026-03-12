@@ -1,14 +1,14 @@
 # Verifying OSTD soundness
 
-*(Foreword: This post summarizes our progress in verifying OSTD and highlights key results from our research papers. This work is carried out in collaboration with* *[CertiK](https://www.certik.com/)*.)*
+*(Foreword: This post summarizes our progress in verifying OSTD and highlights key results from our research papers. This work is carried out in collaboration with [CertiK](https://www.certik.com/).)*
 
-You can trust Rust. Millions of developers sleep soundly on the promise that Rust is safer than other systems-level programming languages. That's why we chose it for Asterinas---if any system needs to be trusted, it's a kernel. Our framekernel architecture confines all unsafe code to OSTD, a minimal 15,000-line trusted core. If OSTD is unsound, the entire 100,000-line kernel is unsafe as well.
+You can trust Rust. Millions of developers sleep soundly on the promise that Rust is safer than other systems-level programming languages. That's why we chose it for Asterinas -- if any system needs to be trusted, it's a kernel. Our framekernel architecture confines all unsafe code to OSTD, a minimal 15,000-line trusted core. If OSTD is unsound, the entire 100,000-line kernel is unsafe as well.
 
 So we had better be really certain that OSTD is actually well-encapsulated! And when we need certainty, we turn to formal verification.
 
 A year ago, we reported our [initial results](https://asterinas.github.io/2025/02/13/towards-practical-formal-verification-for-a-general-purpose-os-in-rust.html) in verifying the `mm` module: a collection of functions from different components of the module, for each of which we verified specific safety concerns. Now we have expanded that effort to all components:
 
-![](assets/images/subset.png)
+![Architecture of the formal verification components in the OSTD Memory Management subsystem](/assets/images/subset.png)
 
 > Figure 1. Architecture of the formal verification components in the OSTD Memory Management subsystem
 
@@ -20,7 +20,7 @@ The key components are:
 
 From the low-level foundation of `frame` to the "high-level" (for the kernel) abstraction of `vm_space` and `io`, we verify the Rust-soundness of the OSTD interface, as well as correctness properties of each component. (In `vm_space`, the soundness claim is weaker, because an ill-behaved caller can misconfigure userspace memory to cause UB, but that UB cannot affect kernel space.)
 
-Besides the `mm` verification effort, we have published a paper on concurrent verification of our performant page table locking mechanism. Read more about that [here](Link CortenMM).
+Besides the `mm` verification effort, we have published a paper on concurrent verification of our performant page table locking mechanism. Read more about that [here](https://dl.acm.org/doi/10.1145/3731569.3764836).
 
 In this post, we will dig into how we define Rust soundness as a formal property, and how individual verified functions compose vertically and horizontally to prove that property, along with useful correctness properties, over this entire subset of OSTD.
 
@@ -69,7 +69,7 @@ assumptions of the ones above.
 
 > **Correctness and soundness are not parallel goals. One supports the other as you move up the call stack.**
 
-![](assets/images/soundness-correctness.png)
+![Soundness and correctness as a vertical feedback loop](/assets/images/soundness-correctness.png)
 
 > Figure 2. Soundness and correctness as a vertical feedback loop. *The soundness obligation of each caller motivates tighter correctness specs in its callees; those correctness specs in turn become the proof prerequisites that discharge the caller's soundness. Correctness at the bottom is soundness at the top.*
 
@@ -94,7 +94,7 @@ pub ghost struct CursorModel {
 
 Rust Soundness is a property of a partial program. To prove it in its basic form, we would need to quantify over all possible calling contexts that might call into OSTD. That's an infinite set, not very tractable to go through one-by-one. And in the end, Verus will still be verifying the functions one at a time. The solution is to *unwind* the property. We can think of the whole program execution as a loop, like this:
 
-![](assets/images/horizontal.png)
+![Horizontal composition via invariants](/assets/images/horizontal.png)
 
 > Figure 3. Horizontal composition via invariants. *Left: an arbitrary safe-Rust caller may invoke any API function in any order, store returned object handles, and re-dispatch them at any later time, where OSTD must remain UB-free under all such sequences. Middle: equipping each API function with specs and proofs reduces this infinite-caller problem to a per-function obligation, assuming invariants hold on entry, proving they are preserved on exit. Right: since every call is an invariant-preserving step, any sequence of calls, however adversarial, is UB-free.*
 
