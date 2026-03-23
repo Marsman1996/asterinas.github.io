@@ -109,17 +109,18 @@ impl<C: PageTableConfig> EntryOwner<C> {
     pub open spec fn relate_region(self, regions: MetaRegionOwners) -> bool {
         if self.is_node() {
             let idx = frame_to_index(self.meta_slot_paddr().unwrap());
-            &&& regions.slot_owners[idx].inner_perms.ref_count.value() != REF_COUNT_UNUSED
-            &&& regions.slot_owners[idx].raw_count == self.expected_raw_count()
-            &&& regions.slot_owners[idx].self_addr == self.node.unwrap().meta_perm.addr()
-            &&& self.node.unwrap().meta_perm.points_to.value().wf(regions.slot_owners[idx])
-            &&& regions.slot_owners[idx].path_if_in_pt is Some ==>
-                regions.slot_owners[idx].path_if_in_pt.unwrap() == self.path
+            let slot_owner = regions.slot_owners[idx];
+            &&& slot_owner.inner_perms.ref_count.value() != REF_COUNT_UNUSED
+            &&& slot_owner.raw_count == self.expected_raw_count()
+            &&& slot_owner.self_addr == self.node.unwrap().meta_perm.addr()
+            &&& self.node.unwrap().meta_perm.points_to.value().wf(slot_owner)
+            &&& slot_owner.path_if_in_pt is Some ==>
+                slot_owner.path_if_in_pt.unwrap() == self.path
         } else if self.is_frame() {
-            regions.slot_owners[frame_to_index(self.meta_slot_paddr().unwrap())].path_if_in_pt is Some
-            ==>
-              regions.slot_owners[frame_to_index(self.meta_slot_paddr().unwrap())].path_if_in_pt.unwrap() 
-                == self.path
+            let idx = frame_to_index(self.meta_slot_paddr().unwrap());
+            let slot_owner = regions.slot_owners[idx];
+            slot_owner.path_if_in_pt is Some ==>
+                slot_owner.path_if_in_pt.unwrap() == self.path
         } else {
             true
         }
