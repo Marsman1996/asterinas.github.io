@@ -37,11 +37,39 @@ Even if those comments are very detailed (and frequently they are not) they cann
 
 Our verification tool of choice is Verus, which integrates directly with the Rust language. Verus code is Rust code, with additional constructs that allow us to annotate functions with preconditions (boolean formulae that must be true in order to safely call the function) and postconditions (which we would like to prove to hold when the function returns). The Verus compiler converts the pre- and postconditions of each functions into constraints in a satisfiability problem and feeds the result to an SMT solver to exhaustively check whether the postconditions hold.
 
-For complex verification, Verus also allows us to add *ghost state* that exists only during the verification process. Because ghost variables are not compiled into executable code, they have no performance impact, but they can be used to instrument the code to make information about the broader system legible to the verifier. For example, Verus' pointer libraries provide a ghost `PointsTo<T>` type which encodes the current state of a piece of raw memory containing an object of type `T`. A `PointsTo` can only be constructed and modified through valid pointer operations, so its existence provides the "witness" for Verus that the current state of an object in memory is valid. We also define our own ghost types that track parts of the system state that are invisible to any given function. A page table is a tree of individual nodes and their entries, so a `PageTableOwner` is a tree of `EntryOwner` ghost objects, each describing the current state of a concrete object in the system without the need for executable code to access it.
+For complex verification, Verus also allows us to add *ghost state* that exists only during the verification process. Because ghost variables are not compiled into executable code, they have no performance impact, but they can be used to instrument the code to make information about the broader system legible to the verifier. For example, Verus' pointer libraries provide a ghost `PointsTo<T>` type which encodes the current state of a piece of raw memory containing an object of type `T`. A `PointsTo` can only be constructed and modified through valid pointer operations, so its existence provides the "witness" for Verus that the current state of an object in memory is valid. We also define our own ghost types that track parts of the system state that are invisible to any given function. A page table is a tree of individual nodes and their entries, so a `PageTableOwner` is a tree of `EntryOwner` and `NodeOwner` ghost objects, each describing the current state of a concrete object in the system without the need for executable code to access it.
 
-TODO: small example connecting a "SAFETY" comment to a specification.
+To take a concrete example from the function `Entry::replace`, which overwrites a page table entry. In non-verified code, the function makes three promises when it calls the unsafe `write_pte`:
 
-In short, we describe the overall system in terms of imaginary state, specify how that state is allowed to change during execution, and help the solver prove that all real executions match the specifications. So what is the specification here?
+```rust
+// SAFETY:
+// 1. The index is within the bounds.
+// 2. The new PTE is a valid child whose level matches the current page table node.
+// 3. The ownership of the child is passed to the page table node.
+unsafe { self.node.write_pte(self.idx, self.pte) };
+```
+
+In Verus, these promises can be made explicit preconditions of `write_pte`, which takes an additional ghost argument of type `NodeOwner`. `Tracked` here is a kind of ghost object that obeys the borrow checker. 
+
+```rust
+#[verus_spec(with Tracked(owner): Tracked<&mut NodeOwner<C>>)]
+fn write_pte(&mut self, idx: usize, pte: C::E)
+    requires
+      idx < NR_ENTRIES, // Promise 1
+      old(self).inner.inner@.invariants(*old(owner)) // Subsumes 2
+    ensures
+      owner.inv(), // Used in caller to prove 3
+      owner.children.value() == old(owner).children.value().update[idx, pte],
+      ...
+```
+
+Now all calls to `write_pte` from anywhere in the verified codebase will have these `requires` conditions checked at compile time. At the same time, `write_pte` has obligations of its own (`ensures`). It maintains a weakened invariant, and sets the value of memory at the designated index to match the parameter. These postconditions allow `replace` to satisfy its own obligations, and on down the call chain. So, function-level specifications are *vertically composed* as a matter of Verus' fundamental design.
+
+Properties of this kind, relating a function's inputs to its outputs in a vertical composition between callers and callees, are commonly called *correctness* properties. Soundness and correctness are deeply intertwined. Even if our goal is not necessarily to prove correctness for the entire system, proving *anything* about higher level functions depends on the correctness of lower level functions. In this case, `Entry::replace` is called by `CursorMut::replace_cur_entry`, which is called by `CursorMut::map`. The soundness proof for `map` depends on this entire chain of logic. Because lower-level proofs are "consumed" by higher-level ones, we are motivated to make their specifications as precise as possible.
+
+<img src="/assets/images/soundness_correctness.png" alt="Soundness and Correctness" />
+
+In short, we describe the overall system in terms of imaginary state, and specify how that state is allowed to change during execution. Then Verus checks that our specifications hold by logical deduction. Those individual function specifications, composed across the entire system, need to add up to our ultimate claim of soundness. What does that mean?
 
 ### Defining Soundness Formally
 
@@ -59,9 +87,7 @@ Let's examine the implications of this formulation:
 
 - We quantify over all possible callers, which is much harder than verifying a single program. We cannot impose any obligation on $C$.
 - We quantify over all traces; in practical terms, this means that $C$ can call into OSTD in any order.
-- We aren't looking for individual cases of UB, we are constructively proving that there is some defined behavior for any $C$, which inherently rules out UB[^2].
-
-[^2] For more on this principle, see Appel, Program Logics for Certified Compilers.
+- We aren't looking for individual cases of UB, we are constructively proving that there is some defined behavior for any $C$, which inherently rules out UB.
 
 ### Time to Unwind
 
@@ -69,42 +95,44 @@ The first step to proving the theorem above is breaking down a trace into indivi
 
 1. **Define the rules:** Identify the state invariants required to guarantee defined behavior.
 2. **Prove the start:** Prove these rules hold true when the system initializes.
-3. **Prove the transitions:** Prove that every single public API function *preserves* these rules, assuming they hold when the function is called, they must still hold when it returns.
+3. **Prove the transitions:** Prove that every single public API function *preserves* these rules. Assuming they hold when the function is called, they must still hold when it returns.
 
-By induction, if the system starts in a valid state, and every possible API call preserves that valid state, then the state is always valid between calls. This allows us to break the verification of a system-level property into a series of *correctness* proofs. The invariants are the glue that hold them together in a horizontal composition.
+By induction, if the system starts in a valid state, and every possible API call preserves that valid state, then the state is always valid between calls. This allows us to break the verification of a system-level property into a series of *correctness* proofs. The invariants are the glue that hold them together in a *horizontal composition*.
 
-To see this in practice, look at `metaregion_sound`, the most critical system invariant in the memory management (`mm`) module. This rule asserts that the associated page table entry matches the global physical memory records (`MetaRegionOwners`).
+<img src="/assets/images/horizontal.png" alt="Soundness as Horizontal Composition" />
+
+To see this in practice, let's look at `metaregion_sound`, the most critical system invariant in the memory management (`mm`) module. This rule asserts that the associated page table entry matches the global physical memory records (`MetaRegionOwners`).
 
 ```rust
-impl<C: PageTableConfig> EntryOwner<C> {
-    pub open spec fn metaregion_sound(self, regions: MetaRegionOwners) -> bool {
-        if self.is_node() {
-            let idx = frame_to_index(self.meta_slot_paddr().unwrap());
-            &&& regions.slot_owners[idx].inner_perms.ref_count.value() != REF_COUNT_UNUSED
-            &&& regions.slot_owners[idx].raw_count == self.expected_raw_count()
-            &&& regions.slot_owners[idx].self_addr == self.node.unwrap().meta_perm.addr()
-            &&& self.node.unwrap().meta_perm.points_to.value().wf(regions.slot_owners[idx])
-            // Node path tracking: ensures no two tree nodes share the same slot index.
-            &&& regions.slot_owners[idx].path_if_in_pt == Some(self.path)
-        } else if self.is_frame() {
-            let idx = frame_to_index(self.meta_slot_paddr().unwrap());
-            &&& regions.slots.contains_key(idx)
-            &&& regions.slots[idx].addr() == meta_addr(idx)
-            &&& regions.slots[idx].is_init()
-            &&& regions.slots[idx].value().wf(regions.slot_owners[idx])
-            &&& regions.slot_owners[idx].inner_perms.ref_count.value() != REF_COUNT_UNUSED
-        } else {
-            true
-        }
+impl<C: PageTableConfig> EntryOwner<C>
+
+pub open spec fn metaregion_sound(self, regions: MetaRegionOwners) -> bool {
+    let idx = frame_to_index(self.meta_slot_paddr().unwrap());
+    let slot_owner = regions.slot_owners[idx];
+    if self.is_node() {
+        &&& slot_owner.inner_perms.ref_count.value() != REF_COUNT_UNUSED
+        &&& slot_owner.raw_count == self.expected_raw_count()
+        &&& slot_owner.self_addr == self.node.unwrap().meta_perm.addr()
+        &&& self.node.unwrap().meta_perm.points_to.value().wf(slot_owner)
+        // Each node has a unique path within the tree
+        &&& regions.slot_owners[idx].path_if_in_pt == Some(self.path)
+    } else if self.is_frame() {
+        // Each frame has a globally tracked permission object,
+        // in case it is shared.
+        &&& regions.slots.contains_key(idx)
+        &&& regions.slots[idx].addr() == meta_addr(idx)
+        &&& regions.slots[idx].is_init()
+        &&& regions.slots[idx].value().wf(slot_owner)
+        &&& slot_owner.inner_perms.ref_count.value() != REF_COUNT_UNUSED
+    } else {
+        true
     }
 }
 ```
 
- The `path_if_in_pt` clause ensures that page table nodes are unique and correspond to exactly one position in the tree. Note that no such clause exists for mapped frames. While mapping a frame to multiple positions in a userspace page table might have unexpected results, it does not cause undefined behavior from the kernel's perspective.
+The `path_if_in_pt` clause ensures that page table nodes are unique and correspond to exactly one position in the tree. Note that no such clause exists for mapped frames. While mapping a frame to multiple positions in a userspace page table might have unexpected results, it does not cause undefined behavior from the kernel's perspective. Because soundness proofs do not let us place obligations on the caller, our model needs to be flexible enough to specify even erroneous (but well-defined) calls.
 
-Intuitively, it may be surprising that a soundness proof requires proving correctness as well, if only incompletely. But the two kinds of properties are not as distinct as they seem on the surface. While proving soundness in theory only requires showing that each function's behavior has *some* definition, in practice, verifying a higher-level function requires us to be much more precise in specifying the lower-level functions it calls. The specification of API functions that are solely called from outside of OSTD can be looser, but must be at least precise enough to maintain the invariants.
-
-<img src="/assets/images/soundness_correctness.png" alt="Soundness and Correctness" style="width: 65%;" />
+Taken collectively, functions like `metaregion_sound` cover the entire state of the system and provide the obligations that we need to prove for every function at the API boundary. This is why it's so important to verify a cohesive chunk of the library, not just individual functions. Functions that interact with the same data structures could be correct individually, but until we've proven that they all respect the invariant, there is the risk that the remainder contains unexpected behavior that could undermine the proofs.
 
 ## Does the Methodology Scale?
 
@@ -117,6 +145,8 @@ As a proxy for cost, historically, formal verification requires about 20 lines o
 Another common critique of formal verification is that proofs quickly become outdated as code evolves. Verification projects are usually static, pinned to a particular version of the target software. We began our verification on OSTD v0.15 and are currently tracking v0.16.2. Thanks to our modular invariant structure and KVerus's ability to help repair proofs, updating our verification alongside codebase changes has proven quite manageable. Our ultimate goal is continuous verification: updating proofs in the exact same pull request as the code they cover.
 
 ## From Promise to Proof
+
+<img src="/assets/images/subset.png" alt="Verified Subset of OSTD" />
 
 We verified part of a kernel with this approach, but very little of it is kernel-specific. Any Rust project relying on a complex `unsafe` core faces similar challenges, and can be approached in a similar way:
 
