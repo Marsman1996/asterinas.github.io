@@ -12,18 +12,18 @@ updated: 2026-03-30 11:35:44
 
 Rust's `unsafe` mechanism helps it bridge the gap between its powerful high-level features and the occasional need for low-level code. Such low-level code is inherently necessary in kernel programming. At the lowest levels, kernel code must handle raw physical addresses and write directly to memory, forcing the code to break high-level abstractions. But for a component as critical as a kernel, the high-level features are valuable in helping programmers write cleaner, safer code.
 
-**[Asterinas](https://github.com/asterinas/asterinas)** is a Linux ABI-compatible OS kernel written entirely in Rust. It uses a novel **[framekernel architecture](https://asterinas.github.io/book/kernel/the-framekernel-architecture.html)** that enforces a strict separation between *mechanism* and *policy*:
+**[Asterinas](https://github.com/asterinas/asterinas)** is a Linux ABI-compatible, general purpose OS kernel written entirely in Rust. It uses a novel **[framekernel architecture](https://asterinas.github.io/book/kernel/the-framekernel-architecture.html)** that enforces a strict separation between *mechanism* and *policy*:
 
 - **Mechanism:** The Operating System Standard Library ([OSTD](https://asterinas.github.io/book/ostd/index.html)) handles the raw, dangerous primitives: physical memory management, page tables, and hardware configuration. These are the operations that cannot be implemented in safe Rust.
 - **Policy:** Everything built on top of OSTD, such as scheduling, file systems, and network protocols, dictates system behavior. This layer is implemented entirely in *safe Rust*, strictly enforced by `#![deny(unsafe_code)]` in every crate outside OSTD.
 
-This architecture gives kernel developers access to the powerful abstractions and guarantees of safe Rust. It also makes OSTD's soundness incredibly load-bearing. OSTD consists of about 15,000 lines of mechanism code. Sitting above it are over 100,000 lines of safe policy code, written under the guarantees of Rust's high-level features. This massive upper layer automatically inherits Rust's guarantees if and only if OSTD's public API is sound. A bug in OSTD isn't just a localized issue; it is a crack in the foundation that every other crate relies on.
+This architecture gives kernel developers access to the powerful abstractions and guarantees of safe Rust. It also makes OSTD's soundness incredibly load-bearing. OSTD consists of about 15,000 lines of mechanism code. Sitting above it are over 100,000 lines of safe policy code, written under the guarantees of Rust's high-level features. This massive upper layer automatically inherits Rust's guarantees if and only if OSTD's public API is sound. A bug in OSTD isn't just a localized issue; it compromises the safety guarantees of the entire rest of the kernel.
 
 A small piece of code with an outsized impact on system reliability is a strong candidate for *formal verification* (FV). FV uses mathematical logic to construct machine-checked proofs of the validity of assertions about the code. Constructing the specifications to be proven and guiding the system toward the proof is a lot of effort, but when it is done it produces a very high degree of assurance with no runtime overhead. In this case we use **[Verus](https://github.com/verus-lang/verus)**, a Rust dialect with source-code annotations that integrate with an SMT solver.
 
 A year ago, [our Phase I groundwork](https://asterinas.github.io/2025/02/13/towards-practical-formal-verification-for-a-general-purpose-os-in-rust.html) successfully verified isolated functions within the memory management (`mm`) module. While meaningful, these proofs were localized. 
 
-**This post marks Phase II.** Not only have we verified *more* functions' individual behavior, but we have successfully proven that the public API of the entire `mm` module is **sound**.
+**This post marks Phase II.** Not only have we verified *more* functions' individual behavior, but we have successfully proven that the public API of their module is **sound**.
 
 ## Proving Encapsulating of Unsafe Rust
 
@@ -37,7 +37,7 @@ Even if those comments are very detailed (and frequently they are not) they cann
 
 Our verification tool of choice is Verus, which integrates directly with the Rust language. Verus code is Rust code, with additional constructs that allow us to annotate functions with preconditions (boolean formulae that must be true in order to safely call the function) and postconditions (which we would like to prove to hold when the function returns). The Verus compiler converts the pre- and postconditions of each functions into constraints in a satisfiability problem and feeds the result to an SMT solver to exhaustively check whether the postconditions hold.
 
-For complex verification, Verus also allows us to add *ghost state* that exists only during the verification process. Because ghost variables are not compiled into executable code, they have no performance impact, but they can be used to instrument the code to make information about the broader system legible to the verifier. For example, Verus' pointer libraries provide a ghost `PointsTo<T>` type which encodes the current state of a piece of raw memory containing an object of type `T`. A `PointsTo` can only be constructed and modified through valid pointer operations, so its existence provides the "witness" for Verus that the current state of an object in memory is valid. We also define our own ghost types that track parts of the system state that are invisible to any given function. A page table is a tree of individual nodes and their entries, so a `PageTableOwner` is a tree of `EntryOwner` and `NodeOwner` ghost objects, each describing the current state of a concrete object in the system without the need for executable code to access it.
+For complex verification, Verus also allows us to add *ghost state* that exists only during the verification process. Because ghost variables are not compiled into executable code, they have no performance impact, but they can be used to instrument the code to make information about the broader system legible to the verifier. For example, Verus' pointer libraries provide a ghost `PointsTo<T>` type which encodes the current state of a piece of raw memory containing an object of type `T`. A `PointsTo` can only be constructed and modified through valid pointer operations, so its existence provides the "witness" for Verus that the current state of an object in memory is valid. We also define our own ghost types that track parts of the system state that are invisible to any given function. A page table is a tree of nodes and their entries, so a `PageTableOwner` is a tree of `EntryOwner` and `NodeOwner` ghost objects, each describing the current state of a concrete object in the system without the need for executable code to access it.
 
 To take a concrete example from the function `Entry::replace`, which overwrites a page table entry. In non-verified code, the function makes three promises when it calls the unsafe `write_pte`:
 
@@ -67,7 +67,7 @@ Now all calls to `write_pte` from anywhere in the verified codebase will have th
 
 Properties of this kind, relating a function's inputs to its outputs in a vertical composition between callers and callees, are commonly called *correctness* properties. Soundness and correctness are deeply intertwined. Even if our goal is not necessarily to prove correctness for the entire system, proving *anything* about higher level functions depends on the correctness of lower level functions. In this case, `Entry::replace` is called by `CursorMut::replace_cur_entry`, which is called by `CursorMut::map`. The soundness proof for `map` depends on this entire chain of logic. Because lower-level proofs are "consumed" by higher-level ones, we are motivated to make their specifications as precise as possible.
 
-<img src="/assets/images/soundness_correctness.png" alt="Soundness and Correctness" />
+<img src="/assets/images/soundness_correctness.svg" alt="Soundness and Correctness" />
 
 In short, we describe the overall system in terms of imaginary state, and specify how that state is allowed to change during execution. Then Verus checks that our specifications hold by logical deduction. Those individual function specifications, composed across the entire system, need to add up to our ultimate claim of soundness. What does that mean?
 
@@ -86,7 +86,7 @@ $$
 Let's examine the implications of this formulation:
 
 - We quantify over all possible callers, which is much harder than verifying a single program. We cannot impose any obligation on $C$.
-- We quantify over all traces; in practical terms, this means that $C$ can call into OSTD in any order.
+- We quantify over all traces; in practical terms, this means that $C$ can call into OSTD functions in any order.
 - We aren't looking for individual cases of UB, we are constructively proving that there is some defined behavior for any $C$, which inherently rules out UB.
 
 ### Time to Unwind
@@ -99,9 +99,9 @@ The first step to proving the theorem above is breaking down a trace into indivi
 
 By induction, if the system starts in a valid state, and every possible API call preserves that valid state, then the state is always valid between calls. This allows us to break the verification of a system-level property into a series of *correctness* proofs. The invariants are the glue that hold them together in a *horizontal composition*.
 
-<img src="/assets/images/horizontal.png" alt="Soundness as Horizontal Composition" />
+<img src="/assets/images/horizontal.svg" alt="Soundness as Horizontal Composition" />
 
-To see this in practice, let's look at `metaregion_sound`, the most critical system invariant in the memory management (`mm`) module. This rule asserts that the associated page table entry matches the global physical memory records (`MetaRegionOwners`).
+To see this in practice, let's look at `metaregion_sound`, the most critical system invariant in the memory management (`mm`) module. This rule asserts that the associated page table entry matches the global physical memory records (`MetaRegionOwners`), which live in a special metadata region.
 
 ```rust
 impl<C: PageTableConfig> EntryOwner<C>
@@ -138,13 +138,21 @@ Taken collectively, functions like `metaregion_sound` cover the entire state of 
 
 A verification approach is only practical if it can be executed without a massive, multi-year engineering effort. Here is the evidence that our methodology not only works in theory but actually scales in practice.
 
-We began a year ago with a proof of concept, verifying selected properties of individual functions but leaving the bulk of the code unverified. After taking lessons from that phase and scaling up our efforts, in just over a year we have expanded to cover the entire virtual memory subsystem of the memory management (`mm`) module, from raw physical frame allocation at the bottom to virtual address space mapping at the top. Recall that horizontal composition is vital for proving soundness: verifying an entire subsystem is much more valuable than disconnected functions. Meanwhile, a parallel effort called CortenMM has verified the complex concurrent correctness of the page table's fine-grained locking. (TODO: link CortenMM post).
+We began a year ago with a proof of concept, verifying selected properties of individual functions but leaving the bulk of the code unverified. After taking lessons from that phase and scaling up our efforts, in just over a year we have expanded to cover the entire virtual memory subsystem of the memory management (`mm`) module, from raw physical frame allocation at the bottom to virtual address space mapping at the top. Recall that horizontal composition is vital for proving soundness: verifying an entire subsystem is much more valuable than disconnected functions. Meanwhile, a parallel project called (CortenMM)[https://dl.acm.org/doi/10.1145/3731569.3764836] has verified the complex concurrent correctness of the page table's fine-grained locking, and has been published in SOSP '25.
 
-As a proxy for cost, historically, formal verification requires about 20 lines of mathematical proof for every 1 line of code (a 1:20 ratio). This immense cost has blocked widespread industrial adoption. **We reduced this ratio to below 1:4.** This efficiency comes from two factors: Verus’ automated SMT solver effortlessly handles routine mathematical obligations in the background, and OSTD’s tightly scoped, modular architecture prevents proof complexity from spiraling out of control. Advances in AI help us scale even faster. Because proof annotations often follow predictable patterns derived from the system model, AI can be very effective in helping the SMT solver handle proofs that previously would require human guidance. To this end we built **KVerus**, an AI-assisted tool that automatically generates a growing fraction of our proofs. Crucially, AI assistance accelerates the writing process but does not alter the trustworthiness of the results. Every single proof generated by KVerus is strictly checked and validated by Verus's mathematical solver. AI frees our engineers to focus on the big picture questions: specifications, system models, and proof strategy.
+As a proxy for cost, historically, formal verification requires about 20 lines of mathematical proof for every 1 line of code (a 1:20 ratio). This immense cost has blocked widespread industrial adoption. **We reduced this ratio to below 1:4.**
 
-Another common critique of formal verification is that proofs quickly become outdated as code evolves. Verification projects are usually static, pinned to a particular version of the target software. We began our verification on OSTD v0.15 and are currently tracking v0.16.2. Thanks to our modular invariant structure and KVerus's ability to help repair proofs, updating our verification alongside codebase changes has proven quite manageable. Our ultimate goal is continuous verification: updating proofs in the exact same pull request as the code they cover.
+This efficiency comes from two factors: Verus’ automated SMT solver effortlessly handles routine mathematical obligations in the background, and OSTD’s tightly scoped, modular architecture prevents proof complexity from spiraling out of control.
+
+Advances in AI help us scale even faster. Because proof annotations often follow predictable patterns derived from the system model, AI can be very effective in helping the SMT solver handle proofs that previously would require human guidance. To this end we built **KVerus**, an AI-assisted tool that automatically generates a growing fraction of our proofs. Crucially, AI assistance accelerates the writing process but does not alter the trustworthiness of the results. Every single proof generated by KVerus is strictly checked and validated by Verus's mathematical solver. AI frees our engineers to focus on the big picture questions: specifications, system models, and proof strategy.
+
+Another common critique of formal verification is that proofs quickly become outdated as code evolves. Verification projects are usually static, pinned to a particular version of the target software. We began our verification on OSTD v0.15 and are currently tracking v0.16.2. Thanks to our modular invariant structure and KVerus's ability to help repair proofs, updating our verification alongside codebase changes has proven quite manageable. Our ultimate goal is continuous verification: updating proofs in the same pull request as the code they cover.
 
 ## From Promise to Proof
+
+To recap where we stand: we have verified soundness of a significant subset of OSTD, covering virtual memory management libraries from physical frames up to virtual address spaces. The diagram below shows the structure of the verified subset, with unverified `mm` modules to the left and the rest of OSTD to the right. Compare to last year's proof-of-concept: where we had picked out a handful of functions from each module, now we can simply list the modules. In general any function on a call path from the API functions is verified, save a few that are axiomatized as part of the trusted computing base.
+
+Outside of CortenMM we verify the system as a sequential program, with further concurrent verification a future goal. We are currently expanding into verifying the synchronization primitives in `sync`.
 
 <img src="/assets/images/subset.png" alt="Verified Subset of OSTD" />
 
