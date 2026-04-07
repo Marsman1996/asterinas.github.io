@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="-29 6 610 413" width="610" height="413">
+<svg version="1.1" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="-122 6 798 411" width="798" height="411">
   <defs>
     <linearGradient x1="0" x2="1" id="Gradient" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#c8e9c4" stop-opacity=".45947266"/>
-      <stop offset="1" stop-color="#1b4d69" stop-opacity=".12462023"/>
-    </linearGradient>
-    <linearGradient id="Obj_Gradient" xl:href="#Gradient" gradientTransform="translate(-6.5 64.93137) rotate(90) scale(322)"/>
-    <linearGradient id="Obj_Gradient_2" xl:href="#Gradient" gradientTransform="translate(465.5 390) rotate(-90) scale(322)"/>
-    <linearGradient x1="0" x2="1" id="Gradient_2" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#16432a"/>
       <stop offset="1" stop-color="#333" stop-opacity="0"/>
     </linearGradient>
-    <linearGradient id="Obj_Gradient_3" xl:href="#Gradient_2" gradientTransform="translate(405 350) rotate(90) scale(36)"/>
-    <linearGradient id="Obj_Gradient_4" xl:href="#Gradient_2" gradientTransform="translate(114 350) rotate(90) scale(36)"/>
+    <linearGradient id="Obj_Gradient" xl:href="#Gradient" gradientTransform="translate(405 350) rotate(90) scale(36)"/>
+    <linearGradient id="Obj_Gradient_2" xl:href="#Gradient" gradientTransform="translate(114 350) rotate(90) scale(36)"/>
+    <linearGradient x1="0" x2="1" id="Gradient_2" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c8e9c4" stop-opacity=".45947266"/>
+      <stop offset="1" stop-color="#1b4d69" stop-opacity=".12462023"/>
+    </linearGradient>
+    <linearGradient id="Obj_Gradient_3" xl:href="#Gradient_2" gradientTransform="translate(-24.5 64.93137) rotate(90) scale(322)"/>
+    <linearGradient id="Obj_Gradient_4" xl:href="#Gradient_2" gradientTransform="translate(545.5 386.93137) rotate(-90) scale(322)"/>
     <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -3 6 6" markerWidth="6" markerHeight="6" color="#c8e9c4">
       <g>
         <path d="M 3.84 0 L 0 -1.44 L 0 1.44 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
@@ -24,7 +24,7 @@
         <path d="M 8 0 L 0 -3 L 0 3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
       </g>
     </marker>
-    <filter id="Shadow" filterUnits="userSpaceOnUse" x="-90" y="-35.3">
+    <filter id="Shadow" filterUnits="userSpaceOnUse" x="-201.8" y="-35.1">
       <feGaussianBlur in="SourceAlpha" result="blur" stdDeviation="1.744"/>
       <feOffset in="blur" result="offset" dx="2" dy="2"/>
       <feFlood flood-color="#afb8ff" flood-opacity=".5" result="flood"/>
@@ -34,34 +34,18 @@
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-    <linearGradient id="Obj_Gradient_5" xl:href="#Gradient_2" gradientTransform="translate(408 228.5) rotate(90) scale(36)"/>
-    <linearGradient id="Obj_Gradient_6" xl:href="#Gradient_2" gradientTransform="translate(117 228.5) rotate(90) scale(36)"/>
-    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker_3" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="#c8e9c4">
-      <g>
-        <path d="M 8 0 L 0 -3 L 0 3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
-      </g>
-    </marker>
-    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker_4" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-9 -4 10 8" markerWidth="10" markerHeight="8" color="#c8e9c4">
-      <g>
-        <path d="M -8 0 L 0 3 L 0 -3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
-      </g>
-    </marker>
-    <linearGradient id="Obj_Gradient_7" xl:href="#Gradient_2" gradientTransform="translate(405 142) rotate(90) scale(36)"/>
-    <linearGradient id="Obj_Gradient_8" xl:href="#Gradient_2" gradientTransform="translate(114 142) rotate(90) scale(36)"/>
-    <linearGradient id="Obj_Gradient_9" xl:href="#Gradient_2" gradientTransform="translate(407 56) rotate(90) scale(36)"/>
-    <linearGradient id="Obj_Gradient_10" xl:href="#Gradient_2" gradientTransform="translate(116 56) rotate(90) scale(36)"/>
+    <linearGradient id="Obj_Gradient_5" xl:href="#Gradient" gradientTransform="translate(408 228.5) rotate(90) scale(36)"/>
+    <linearGradient id="Obj_Gradient_6" xl:href="#Gradient" gradientTransform="translate(117 228.5) rotate(90) scale(36)"/>
+    <linearGradient id="Obj_Gradient_7" xl:href="#Gradient" gradientTransform="translate(405 142) rotate(90) scale(36)"/>
+    <linearGradient id="Obj_Gradient_8" xl:href="#Gradient" gradientTransform="translate(114 142) rotate(90) scale(36)"/>
+    <linearGradient id="Obj_Gradient_9" xl:href="#Gradient" gradientTransform="translate(407 56) rotate(90) scale(36)"/>
+    <linearGradient id="Obj_Gradient_10" xl:href="#Gradient" gradientTransform="translate(116 56) rotate(90) scale(36)"/>
   </defs>
   <g id="Soundness_3" fill-opacity="1" stroke-dasharray="none" stroke="none" stroke-opacity="1" fill="none">
     <title>Soundness 3</title>
-    <rect fill="#000314" x="-29" y="6" width="610" height="413"/>
+    <rect fill="#000314" x="-122" y="6" width="798" height="411"/>
     <g id="Soundness_3_Layer_1">
       <title>Layer 1</title>
-      <g id="Graphic_40">
-        <path d="M 5 386.93137 L -18 386.93137 L -18 104.93137 L -29 104.93137 L -6.5 64.93137 L 16 104.93137 L 5 104.93137 Z" fill="url(#Obj_Gradient)"/>
-      </g>
-      <g id="Graphic_39">
-        <path d="M 454 68 L 477 68 L 477 350 L 488 350 L 465.5 390 L 443 350 L 454 350 Z" fill="url(#Obj_Gradient_2)"/>
-      </g>
       <g id="Line_151">
         <line x1="188.75691" y1="82.4824" x2="172.24309" y2="124.5176" stroke="#c8e9c4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4.0,4.0" stroke-width="1"/>
       </g>
@@ -74,10 +58,16 @@
         <circle cx="348.5" cy="335.5" r="7.50001198426423" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
       <g id="Graphic_49">
-        <rect x="361" y="350" width="88" height="36" fill="url(#Obj_Gradient_3)"/>
+        <rect x="361" y="350" width="88" height="36" fill="url(#Obj_Gradient)"/>
       </g>
       <g id="Graphic_42">
-        <rect x="70" y="350" width="88" height="36" fill="url(#Obj_Gradient_4)"/>
+        <rect x="70" y="350" width="88" height="36" fill="url(#Obj_Gradient_2)"/>
+      </g>
+      <g id="Graphic_40">
+        <path d="M -13 386.93137 L -36 386.93137 L -36 104.93137 L -47 104.93137 L -24.5 64.93137 L -2 104.93137 L -13 104.93137 Z" fill="url(#Obj_Gradient_3)"/>
+      </g>
+      <g id="Graphic_39">
+        <path d="M 534 64.93137 L 557 64.93137 L 557 346.93137 L 568 346.93137 L 545.5 386.93137 L 523 346.93137 L 534 346.93137 Z" fill="url(#Obj_Gradient_4)"/>
       </g>
       <g id="Graphic_37">
         <path d="M 75 329 L 153 329 C 155.76142 329 158 331.23858 158 334 L 158 345 C 158 347.76142 155.76142 350 153 350 L 75 350 C 72.23858 350 70 347.76142 70 345 L 70 334 C 70 331.23858 72.23858 329 75 329 Z" fill="#c8e9c4"/>
@@ -94,27 +84,22 @@
         </text>
       </g>
       <g id="Graphic_34">
-        <text transform="translate(461 177)" fill="#c2dbea">
-          <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="#c2dbea" x="0" y="15" xml:space="preserve">Soundness and </tspan>
-          <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="#c2dbea" x="0" y="34" xml:space="preserve">upper-layer </tspan>
-          <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="#c2dbea" x="0" y="53" xml:space="preserve">correctness drives </tspan>
-          <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="#c2dbea" x="0" y="72" xml:space="preserve">lower-layer </tspan>
-          <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="#c2dbea" x="0" y="91" xml:space="preserve">correctness </tspan>
-          <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="#c2dbea" x="0" y="110" xml:space="preserve">precision.</tspan>
+        <text transform="translate(474 182)" fill="#c2dbea">
+          <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="#c2dbea" x="0" y="15" xml:space="preserve">Soundness and upper-layer </tspan>
+          <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="#c2dbea" x="0" y="34" xml:space="preserve">correctness drives lower-layer </tspan>
+          <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="#c2dbea" x="0" y="53" xml:space="preserve">correctness precision.</tspan>
         </text>
       </g>
       <g id="Graphic_32">
-        <text transform="translate(114 266)" fill="#c8e9c4">
+        <text transform="translate(-6 309)" fill="#c8e9c4">
           <tspan font-family="Roboto Condensed" font-style="italic" font-weight="bold" font-size="14" fill="#c8e9c4" x="0" y="13" xml:space="preserve">Obligation</tspan>
         </text>
       </g>
       <g id="Graphic_31">
-        <text transform="translate(-16 178.5)" fill="#c8e9c4">
-          <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="#c8e9c4" x="0" y="15" xml:space="preserve">System </tspan>
-          <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="#c8e9c4" x="0" y="34" xml:space="preserve">soundness </tspan>
-          <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="#c8e9c4" x="0" y="53" xml:space="preserve">depends on </tspan>
-          <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="#c8e9c4" x="0" y="72" xml:space="preserve">functions’ </tspan>
-          <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="#c8e9c4" x="0" y="91" xml:space="preserve">correctness.</tspan>
+        <text transform="translate(-117 193)" fill="#c8e9c4">
+          <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="#c8e9c4" x="0" y="15" xml:space="preserve">System soundness </tspan>
+          <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="#c8e9c4" x="0" y="34" xml:space="preserve">depends on functions’ </tspan>
+          <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="#c8e9c4" x="0" y="53" xml:space="preserve">correctness.</tspan>
         </text>
       </g>
       <g id="Graphic_30">
@@ -124,12 +109,12 @@
         </text>
       </g>
       <g id="Graphic_21">
-        <text transform="translate(349 266)" fill="#c8e9c4">
+        <text transform="translate(441 309)" fill="#c8e9c4">
           <tspan font-family="Roboto Condensed" font-style="italic" font-weight="bold" font-size="14" fill="#c8e9c4" x="0" y="13" xml:space="preserve">Guarantee</tspan>
         </text>
       </g>
       <g id="Graphic_41">
-        <text transform="translate(56.777344 301)" fill="#c2dbea">
+        <text transform="translate(75 301)" fill="#c2dbea">
           <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="#c2dbea" x="0" y="15" xml:space="preserve">write_pte()</tspan>
         </text>
       </g>
@@ -138,9 +123,9 @@
         <circle cx="141.5" cy="385.5" r="7.50001198426423" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
       <g id="Graphic_44">
-        <rect x="70" y="399" width="379" height="19" fill="#222645"/>
-        <rect x="70" y="399" width="379" height="19" stroke="#8d96d5" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"/>
-        <text transform="translate(75 399)" fill="white">
+        <rect x="70" y="397" width="379" height="19" fill="#222645"/>
+        <rect x="70" y="397" width="379" height="19" stroke="#8d96d5" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"/>
+        <text transform="translate(75 397)" fill="white">
           <tspan font-family="Roboto Condensed" font-size="16" fill="white" x="77.35547" y="15" xml:space="preserve">Formal Model for Code Reasoning</tspan>
         </text>
       </g>
@@ -185,9 +170,9 @@
         <line x1="352.63213" y1="341.7608" x2="377.36787" y2="379.2392" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="8.0,8.0" stroke-width="2"/>
       </g>
       <g id="Graphic_60" filter="url(#Shadow)">
-        <text transform="translate(175 349.5)" fill="white">
-          <tspan font-family="Roboto Condensed" font-style="italic" font-size="12" fill="white" x="0" y="11" xml:space="preserve">Correctness: every valid input produces </tspan>
-          <tspan font-family="Roboto Condensed" font-style="italic" font-size="12" fill="white" x="0" y="25" xml:space="preserve">an output matching the specification.</tspan>
+        <text transform="translate(179 349.5)" fill="white">
+          <tspan font-family="Roboto Condensed" font-style="italic" font-size="12" fill="white" x="0" y="11" xml:space="preserve">Proof: every valid input produces an </tspan>
+          <tspan font-family="Roboto Condensed" font-style="italic" font-size="12" fill="white" x="0" y="25" xml:space="preserve">output matching the specification.</tspan>
         </text>
       </g>
       <g id="Graphic_79">
@@ -225,7 +210,7 @@
         </text>
       </g>
       <g id="Graphic_87">
-        <text transform="translate(56.777344 183)" fill="#c2dbea">
+        <text transform="translate(75 183)" fill="#c2dbea">
           <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="#c2dbea" x="0" y="15" xml:space="preserve">replace()</tspan>
         </text>
       </g>
@@ -273,10 +258,10 @@
         <path d="M 208 258 L 212.5 251 L 217 258 Z" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"/>
       </g>
       <g id="Line_103">
-        <path d="M 188.3593 254.25512 L 169 283.5 L 169.3327 318.1008" marker-end="url(#FilledArrow_Marker_3)" stroke="#c8e9c4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4.0,4.0" stroke-width="1"/>
+        <path d="M 188.3593 254.25512 L 169 283.5 L 169.42789 328.00034" stroke="#c8e9c4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4.0,4.0" stroke-width="1"/>
       </g>
       <g id="Line_104">
-        <path d="M 257.02394 253.45674 L 348 283.5 L 348.4279 328.00034" marker-start="url(#FilledArrow_Marker_4)" stroke="#c8e9c4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4.0,4.0" stroke-width="1"/>
+        <path d="M 247.62327 250.35233 L 348 283.5 L 348.4279 328.00034" stroke="#c8e9c4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4.0,4.0" stroke-width="1"/>
       </g>
       <g id="Graphic_101">
         <rect x="199" y="258" width="81.83691" height="18" fill="#000314"/>
@@ -285,10 +270,10 @@
         </text>
       </g>
       <g id="Graphic_105" filter="url(#Shadow)">
-        <text transform="translate(198.5 282.5)" fill="white">
+        <text transform="translate(179 282.5)" fill="white">
           <tspan font-family="Roboto Condensed" font-style="italic" font-size="12" fill="white" x="0" y="11" xml:space="preserve">Vertical composition:</tspan>
-          <tspan font-family="Roboto Condensed" font-style="italic" font-size="12" fill="white" x="0" y="25" xml:space="preserve">callee&apos;s specification </tspan>
-          <tspan font-family="Roboto Condensed" font-style="italic" font-size="12" fill="white" x="0" y="39" xml:space="preserve">becomes the caller’s proof</tspan>
+          <tspan font-family="Roboto Condensed" font-style="italic" font-size="12" fill="white" x="0" y="25" xml:space="preserve">callee&apos;s specification becomes the </tspan>
+          <tspan font-family="Roboto Condensed" font-style="italic" font-size="12" fill="white" x="0" y="39" xml:space="preserve">premise on which the caller&apos;s proof is built</tspan>
         </text>
       </g>
       <g id="Graphic_106">
@@ -326,8 +311,8 @@
         </text>
       </g>
       <g id="Graphic_114">
-        <rect x="51.777344" y="95" width="119.44531" height="23" fill="#000314"/>
-        <text transform="translate(52.777344 97)" fill="#c2dbea">
+        <rect x="67" y="95" width="119.44531" height="23" fill="#000314"/>
+        <text transform="translate(68 97)" fill="#c2dbea">
           <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="#c2dbea" x="0" y="15" xml:space="preserve">replace_cur_entry()</tspan>
         </text>
       </g>
@@ -421,8 +406,8 @@
         </text>
       </g>
       <g id="Graphic_138">
-        <text transform="translate(56.777344 11)" fill="#c2dbea">
-          <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="#c2dbea" x="0" y="15" xml:space="preserve">map()</tspan>
+        <text transform="translate(74 11)" fill="#c2dbea">
+          <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="#c2dbea" x="0" y="15" xml:space="preserve">CursorMut::map()</tspan>
         </text>
       </g>
       <g id="Graphic_139">

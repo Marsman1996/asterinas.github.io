@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="238 21 734 693" width="734" height="693">
+  <defs>
+    <filter id="Shadow" filterUnits="userSpaceOnUse" x="164.6" y="-48.3">
+      <feGaussianBlur in="SourceAlpha" result="blur" stdDeviation="1.744"/>
+      <feOffset in="blur" result="offset" dx="2" dy="2"/>
+      <feFlood flood-color="#afb8ff" flood-opacity=".5" result="flood"/>
+      <feComposite in="flood" in2="offset" operator="in" result="color"/>
+      <feMerge>
+        <feMergeNode in="color"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -3 7 6" markerWidth="7" markerHeight="6" color="white">
+      <g>
+        <path d="M 4.8 0 L 0 -1.8 L 0 1.8 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <g id="Arch" fill-opacity="1" stroke-dasharray="none" stroke="none" stroke-opacity="1" fill="none">
+    <title>Arch</title>
+    <rect fill="#000314" x="238" y="21" width="734" height="693"/>
+    <g id="Arch_Layer_1">
+      <title>Layer 1</title>
+      <g id="Group_76">
+        <g id="Graphic_78">
+          <path d="M 624.3655 88.08459 L 909.5534 88.08459 C 912.3148 88.08459 914.5534 90.32316 914.5534 93.08459 L 914.5534 372.6034 C 914.5534 375.36482 912.3148 377.6034 909.5534 377.6034 L 624.3655 377.6034 C 621.6041 377.6034 619.3655 375.36482 619.3655 372.6034 L 619.3655 93.08459 C 619.3655 90.32316 621.6041 88.08459 624.3655 88.08459 Z" stroke="#8d96d5" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"/>
+        </g>
+        <g id="Graphic_77"/>
+      </g>
+      <g id="Group_70">
+        <g id="Graphic_73">
+          <a target="_blank" xl:href="https://asterinas.github.io/vostd/ostd/index.html">
+            <text transform="translate(740.9158 25.589235)" fill="white" fill-opacity=".6104329">
+              <tspan font-family="Roboto Condensed" font-weight="bold" font-size="16" fill="white" fill-opacity=".6104329" x="0" y="15" xml:space="preserve">OSTD API Boundary</tspan>
+            </text>
+          </a>
+        </g>
+        <g id="Line_72">
+          <a target="_blank" xl:href="https://asterinas.github.io/vostd/ostd/index.html">
+            <line x1="287.16345" y1="36.028996" x2="735.9158" y2="35.21451" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          </a>
+        </g>
+        <g id="Line_71">
+          <a target="_blank" xl:href="https://asterinas.github.io/vostd/ostd/index.html">
+            <line x1="873.9609" y1="35.56777" x2="927.5084" y2="35.939013" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          </a>
+        </g>
+      </g>
+      <g id="Group_67">
+        <g id="Graphic_69">
+          <path d="M 280.13385 392.17847 L 903.0759 392.17847 C 905.8374 392.17847 908.0759 394.41705 908.0759 397.17847 L 908.0759 595.11615 C 908.0759 597.8776 905.8374 600.11615 903.0759 600.11615 L 280.13385 600.11615 C 277.37242 600.11615 275.13385 597.8776 275.13385 595.11615 L 275.13385 397.17847 C 275.13385 394.41705 277.37242 392.17847 280.13385 392.17847 Z" fill="#222645" fill-opacity=".5"/>
+          <path d="M 280.13385 392.17847 L 903.0759 392.17847 C 905.8374 392.17847 908.0759 394.41705 908.0759 397.17847 L 908.0759 595.11615 C 908.0759 597.8776 905.8374 600.11615 903.0759 600.11615 L 280.13385 600.11615 C 277.37242 600.11615 275.13385 597.8776 275.13385 595.11615 L 275.13385 397.17847 C 275.13385 394.41705 277.37242 392.17847 280.13385 392.17847 Z" stroke="#8d96d5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2.0,2.0" stroke-width=".5"/>
+        </g>
+        <g id="Graphic_68">
+          <text transform="translate(276.86277 537.22386) rotate(-90)" fill="white" fill-opacity=".6104329">
+            <tspan font-family="Roboto Condensed" font-weight="bold" font-size="16" fill="white" fill-opacity=".6104329" x="0" y="15" xml:space="preserve">Frame Mgmt.</tspan>
+          </text>
+        </g>
+      </g>
+      <g id="Group_64">
+        <g id="Graphic_66">
+          <path d="M 280.13385 85.13031 L 600.4852 85.13031 C 603.2466 85.13031 605.4852 87.36889 605.4852 90.13031 L 605.4852 179.2408 C 605.4852 182.00222 603.2466 184.2408 600.4852 184.2408 L 280.13385 184.2408 C 277.37242 184.2408 275.13385 182.00222 275.13385 179.2408 L 275.13385 90.13031 C 275.13385 87.36889 277.37242 85.13031 280.13385 85.13031 Z" fill="#222645" fill-opacity=".5"/>
+          <path d="M 280.13385 85.13031 L 600.4852 85.13031 C 603.2466 85.13031 605.4852 87.36889 605.4852 90.13031 L 605.4852 179.2408 C 605.4852 182.00222 603.2466 184.2408 600.4852 184.2408 L 280.13385 184.2408 C 277.37242 184.2408 275.13385 182.00222 275.13385 179.2408 L 275.13385 90.13031 C 275.13385 87.36889 277.37242 85.13031 280.13385 85.13031 Z" stroke="#8d96d5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2.0,2.0" stroke-width=".5"/>
+        </g>
+        <g id="Graphic_65">
+          <text transform="translate(510.547 156.3342)" fill="white" fill-opacity=".6104329">
+            <tspan font-family="Roboto Condensed" font-weight="bold" font-size="16" fill="white" fill-opacity=".6104329" x="0" y="15" xml:space="preserve">Space Mgmt.</tspan>
+          </text>
+        </g>
+      </g>
+      <g id="Group_61">
+        <g id="Graphic_63">
+          <path d="M 280.13385 192.01416 L 601.41055 192.01416 C 604.172 192.01416 606.41055 194.25274 606.41055 197.01416 L 606.41055 377.46176 C 606.41055 380.2232 604.172 382.46176 601.41055 382.46176 L 280.13385 382.46176 C 277.37242 382.46176 275.13385 380.2232 275.13385 377.46176 L 275.13385 197.01416 C 275.13385 194.25274 277.37242 192.01416 280.13385 192.01416 Z" fill="#222645" fill-opacity=".5"/>
+          <path d="M 280.13385 192.01416 L 601.41055 192.01416 C 604.172 192.01416 606.41055 194.25274 606.41055 197.01416 L 606.41055 377.46176 C 606.41055 380.2232 604.172 382.46176 601.41055 382.46176 L 280.13385 382.46176 C 277.37242 382.46176 275.13385 380.2232 275.13385 377.46176 L 275.13385 197.01416 C 275.13385 194.25274 277.37242 192.01416 280.13385 192.01416 Z" stroke="#8d96d5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2.0,2.0" stroke-width=".5"/>
+        </g>
+        <g id="Graphic_62">
+          <text transform="translate(279.06338 279.32294) rotate(-90)" fill="white" fill-opacity=".6104329">
+            <tspan font-family="Roboto Condensed" font-weight="bold" font-size="16" fill="white" fill-opacity=".6104329" x="0" y="15" xml:space="preserve">Page Table</tspan>
+          </text>
+        </g>
+      </g>
+      <g id="Graphic_60" filter="url(#Shadow)">
+        <a target="_blank" xl:href="https://asterinas.github.io/vostd/ostd/mm/frame/index.html">
+          <path d="M 316.22265 473.31303 L 844.7786 473.31303 C 847.5401 473.31303 849.7786 475.5516 849.7786 478.31303 L 849.7786 514.95326 C 849.7786 517.7147 847.5401 519.95326 844.7786 519.95326 L 316.22265 519.95326 C 313.46123 519.95326 311.22265 517.7147 311.22265 514.95326 L 311.22265 478.31303 C 311.22265 475.5516 313.46123 473.31303 316.22265 473.31303 Z" fill="#222645"/>
+          <path d="M 316.22265 473.31303 L 844.7786 473.31303 C 847.5401 473.31303 849.7786 475.5516 849.7786 478.31303 L 849.7786 514.95326 C 849.7786 517.7147 847.5401 519.95326 844.7786 519.95326 L 316.22265 519.95326 C 313.46123 519.95326 311.22265 517.7147 311.22265 514.95326 L 311.22265 478.31303 C 311.22265 475.5516 313.46123 473.31303 316.22265 473.31303 Z" stroke="#8d96d5" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"/>
+          <text transform="translate(316.22265 487.13314)" fill="white">
+            <tspan font-family="Roboto Condensed" font-weight="bold" font-size="16" fill="white" x="245.59332" y="15" xml:space="preserve">frame</tspan>
+          </text>
+        </a>
+      </g>
+      <g id="Graphic_59" filter="url(#Shadow)">
+        <a target="_blank" xl:href="https://asterinas.github.io/vostd/ostd/mm/frame/meta/index.html">
+          <path d="M 316.22265 538.90085 L 890.121 538.90085 C 892.8824 538.90085 895.121 541.1394 895.121 543.90085 L 895.121 580.5411 C 895.121 583.3025 892.8824 585.5411 890.121 585.5411 L 316.22265 585.5411 C 313.46123 585.5411 311.22265 583.3025 311.22265 580.5411 L 311.22265 543.90085 C 311.22265 541.1394 313.46123 538.90085 316.22265 538.90085 Z" fill="#222645"/>
+          <path d="M 316.22265 538.90085 L 890.121 538.90085 C 892.8824 538.90085 895.121 541.1394 895.121 543.90085 L 895.121 580.5411 C 895.121 583.3025 892.8824 585.5411 890.121 585.5411 L 316.22265 585.5411 C 313.46123 585.5411 311.22265 583.3025 311.22265 580.5411 L 311.22265 543.90085 C 311.22265 541.1394 313.46123 538.90085 316.22265 538.90085 Z" stroke="#8d96d5" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"/>
+          <text transform="translate(316.22265 552.72096)" fill="white">
+            <tspan font-family="Roboto Condensed" font-weight="bold" font-size="16" fill="white" x="247.90404" y="15" xml:space="preserve">frame::meta</tspan>
+          </text>
+        </a>
+      </g>
+      <g id="Graphic_57" filter="url(#Shadow)">
+        <path d="M 476.8306 325.13314 L 538.4865 325.13314 C 541.2479 325.13314 543.4865 327.37172 543.4865 330.13314 L 543.4865 358.02833 C 543.4865 360.78975 541.2479 363.02833 538.4865 363.02833 L 476.8306 363.02833 C 474.0692 363.02833 471.8306 360.78975 471.8306 358.02833 L 471.8306 330.13314 C 471.8306 327.37172 474.0692 325.13314 476.8306 325.13314 Z" fill="#222645"/>
+        <path d="M 476.8306 325.13314 L 538.4865 325.13314 C 541.2479 325.13314 543.4865 327.37172 543.4865 330.13314 L 543.4865 358.02833 C 543.4865 360.78975 541.2479 363.02833 538.4865 363.02833 L 476.8306 363.02833 C 474.0692 363.02833 471.8306 360.78975 471.8306 358.02833 L 471.8306 330.13314 C 471.8306 327.37172 474.0692 325.13314 476.8306 325.13314 Z" stroke="#8d96d5" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"/>
+        <text transform="translate(476.8306 325.08074)" fill="white">
+          <tspan font-family="Roboto Condensed" font-weight="bold" font-size="16" fill="white" x="10.742565" y="15" xml:space="preserve">node::</tspan>
+          <tspan font-family="Roboto Condensed" font-weight="bold" font-size="16" fill="white" x="14.326525" y="34" xml:space="preserve">entry</tspan>
+        </text>
+      </g>
+      <g id="Graphic_56" filter="url(#Shadow)">
+        <path d="M 396.93845 325.13314 L 458.5943 325.13314 C 461.35574 325.13314 463.5943 327.37172 463.5943 330.13314 L 463.5943 358.02833 C 463.5943 360.78975 461.35574 363.02833 458.5943 363.02833 L 396.93845 363.02833 C 394.17703 363.02833 391.93845 360.78975 391.93845 358.02833 L 391.93845 330.13314 C 391.93845 327.37172 394.17703 325.13314 396.93845 325.13314 Z" fill="#222645"/>
+        <path d="M 396.93845 325.13314 L 458.5943 325.13314 C 461.35574 325.13314 463.5943 327.37172 463.5943 330.13314 L 463.5943 358.02833 C 463.5943 360.78975 461.35574 363.02833 458.5943 363.02833 L 396.93845 363.02833 C 394.17703 363.02833 391.93845 360.78975 391.93845 358.02833 L 391.93845 330.13314 C 391.93845 327.37172 394.17703 325.13314 396.93845 325.13314 Z" stroke="#8d96d5" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"/>
+        <text transform="translate(396.93845 325.08074)" fill="white">
+          <tspan font-family="Roboto Condensed" font-weight="bold" font-size="16" fill="white" x="10.742565" y="15" xml:space="preserve">node::</tspan>
+          <tspan font-family="Roboto Condensed" font-weight="bold" font-size="16" fill="white" x="15.214117" y="34" xml:space="preserve">child</tspan>
+        </text>
+      </g>
+      <g id="Graphic_55" filter="url(#Shadow)">
+        <path d="M 316.22265 325.13314 L 377.8785 325.13314 C 380.63994 325.13314 382.8785 327.37172 382.8785 330.13314 L 382.8785 358.02833 C 382.8785 360.78975 380.63994 363.02833 377.8785 363.02833 L 316.22265 363.02833 C 313.46123 363.02833 311.22265 360.78975 311.22265 358.02833 L 311.22265 330.13314 C 311.22265 327.37172 313.46123 325.13314 316.22265 325.13314 Z" fill="#222645"/>
+        <path d="M 316.22265 325.13314 L 377.8785 325.13314 C 380.63994 325.13314 382.8785 327.37172 382.8785 330.13314 L 382.8785 358.02833 C 382.8785 360.78975 380.63994 363.02833 377.8785 363.02833 L 316.22265 363.02833 C 313.46123 363.02833 311.22265 360.78975 311.22265 358.02833 L 311.22265 330.13314 C 311.22265 327.37172 313.46123 325.13314 316.22265 325.13314 Z" stroke="#8d96d5" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"/>
+        <text transform="translate(316.22265 334.58074)" fill="white">
+          <tspan font-family="Roboto Condensed" font-weight="bold" font-size="16" fill="white" x="15.11448" y="15" xml:space="preserve">node</tspan>
+        </text>
+      </g>
+      <g id="Graphic_54" filter="url(#Shadow)">
+        <a target="_blank" xl:href="https://asterinas.github.io/vostd/ostd/mm/page_table/index.html">
+          <path d="M 316.22265 262.94618 L 538.4865 262.94618 C 541.2479 262.94618 543.4865 265.18475 543.4865 267.94618 L 543.4865 295.84136 C 543.4865 298.6028 541.2479 300.84136 538.4865 300.84136 L 316.22265 300.84136 C 313.46123 300.84136 311.22265 298.6028 311.22265 295.84136 L 311.22265 267.94618 C 311.22265 265.18475 313.46123 262.94618 316.22265 262.94618 Z" fill="#222645"/>
+          <path d="M 316.22265 262.94618 L 538.4865 262.94618 C 541.2479 262.94618 543.4865 265.18475 543.4865 267.94618 L 543.4865 295.84136 C 543.4865 298.6028 541.2479 300.84136 538.4865 300.84136 L 316.22265 300.84136 C 313.46123 300.84136 311.22265 298.6028 311.22265 295.84136 L 311.22265 267.94618 C 311.22265 265.18475 313.46123 262.94618 316.22265 262.94618 Z" stroke="#8d96d5" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"/>
+          <text transform="translate(316.22265 272.39377)" fill="white">
+            <tspan font-family="Roboto Condensed" font-weight="bold" font-size="16" fill="white" x="76.31538" y="15" xml:space="preserve">page_table</tspan>
+          </text>
+        </a>
+      </g>
+      <g id="Graphic_53" filter="url(#Shadow)">
+        <path d="M 316.22265 200.7592 L 538.4865 200.7592 C 541.2479 200.7592 543.4865 202.99778 543.4865 205.7592 L 543.4865 238.51275 C 543.4865 241.27417 541.2479 243.51275 538.4865 243.51275 L 316.22265 243.51275 C 313.46123 243.51275 311.22265 241.27417 311.22265 238.51275 L 311.22265 205.7592 C 311.22265 202.99778 313.46123 200.7592 316.22265 200.7592 Z" fill="#222645"/>
+        <path d="M 316.22265 200.7592 L 538.4865 200.7592 C 541.2479 200.7592 543.4865 202.99778 543.4865 205.7592 L 543.4865 238.51275 C 543.4865 241.27417 541.2479 243.51275 538.4865 243.51275 L 316.22265 243.51275 C 313.46123 243.51275 311.22265 241.27417 311.22265 238.51275 L 311.22265 205.7592 C 311.22265 202.99778 313.46123 200.7592 316.22265 200.7592 Z" stroke="#8d96d5" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"/>
+        <text transform="translate(316.22265 212.63598)" fill="white">
+          <tspan font-family="Roboto Condensed" font-weight="bold" font-size="16" fill="white" x="51.418436" y="15" xml:space="preserve">page_table::cursor</tspan>
+        </text>
+      </g>
+      <g id="Graphic_52" filter="url(#Shadow)">
+        <a target="_blank" xl:href="https://asterinas.github.io/vostd/ostd/mm/vm_space/index.html">
+          <path d="M 291.2381 106.50708 L 362.66924 106.50708 C 365.43066 106.50708 367.66924 108.74566 367.66924 111.50708 L 367.66924 148.1473 C 367.66924 150.90873 365.43066 153.1473 362.66924 153.1473 L 291.2381 153.1473 C 288.47667 153.1473 286.2381 150.90873 286.2381 148.1473 L 286.2381 111.50708 C 286.2381 108.74566 288.47667 106.50708 291.2381 106.50708 Z" fill="#222645"/>
+          <path d="M 291.2381 106.50708 L 362.66924 106.50708 C 365.43066 106.50708 367.66924 108.74566 367.66924 111.50708 L 367.66924 148.1473 C 367.66924 150.90873 365.43066 153.1473 362.66924 153.1473 L 291.2381 153.1473 C 288.47667 153.1473 286.2381 150.90873 286.2381 148.1473 L 286.2381 111.50708 C 286.2381 108.74566 288.47667 106.50708 291.2381 106.50708 Z" stroke="#8d96d5" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"/>
+          <text transform="translate(291.2381 120.3272)" fill="white">
+            <tspan font-family="Roboto Condensed" font-weight="bold" font-size="16" fill="white" x="4.1168244" y="15" xml:space="preserve">vm_space</tspan>
+          </text>
+        </a>
+      </g>
+      <g id="Graphic_51" filter="url(#Shadow)">
+        <text transform="translate(316.22265 676.1232)" fill="white">
+          <tspan font-family="Roboto Condensed" font-size="16" fill="white" x="12.870811" y="15" xml:space="preserve">Hardware (e.g. TLB)</tspan>
+        </text>
+      </g>
+      <g id="Graphic_50" filter="url(#Shadow)">
+        <text transform="translate(527.20335 676.1232)" fill="white">
+          <tspan font-family="Roboto Condensed" font-size="16" fill="white" x="28.847374" y="15" xml:space="preserve">Memory Model</tspan>
+        </text>
+      </g>
+      <g id="Graphic_49" filter="url(#Shadow)">
+        <text transform="translate(729.85586 666.6232)" fill="white">
+          <tspan font-family="Roboto Condensed" font-size="16" fill="white" x="22.023155" y="15" xml:space="preserve">Rust Semantics / </tspan>
+          <tspan font-family="Roboto Condensed" font-size="16" fill="white" x="7.6676865" y="34" xml:space="preserve">Compiler Correctness</tspan>
+        </text>
+      </g>
+      <g id="Graphic_38" filter="url(#Shadow)">
+        <a target="_blank" xl:href="https://asterinas.github.io/vostd/ostd/mm/frame/allocator/index.html">
+          <path d="M 837.2864 321.24646 L 914.5534 344.56657 L 837.2864 367.8867 L 760.0193 344.56657 Z" fill="#222645"/>
+          <path d="M 837.2864 321.24646 L 914.5534 344.56657 L 837.2864 367.8867 L 760.0193 344.56657 Z" stroke="#8d96d5" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"/>
+          <text transform="translate(785.8814 325.10017)" fill="white">
+            <tspan font-family="Roboto Condensed" font-size="16" fill="white" x="30.797947" y="15" xml:space="preserve">frame::</tspan>
+            <tspan font-family="Roboto Condensed" font-size="16" fill="white" x="25.161228" y="34" xml:space="preserve">allocator</tspan>
+          </text>
+        </a>
+      </g>
+      <g id="Graphic_37" filter="url(#Shadow)">
+        <path d="M 756.7806 290.15297 L 834.0476 313.4731 L 756.7806 336.7932 L 679.5135 313.4731 Z" fill="#222645"/>
+        <path d="M 756.7806 290.15297 L 834.0476 313.4731 L 756.7806 336.7932 L 679.5135 313.4731 Z" stroke="#8d96d5" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"/>
+        <text transform="translate(705.3756 303.5067)" fill="white">
+          <tspan font-family="Roboto Condensed" font-size="16" fill="white" x="39.12607" y="15" xml:space="preserve">dma</tspan>
+        </text>
+      </g>
+      <g id="Graphic_36" filter="url(#Shadow)">
+        <path d="M 734.1094 196.87252 L 811.3764 220.19263 L 734.1094 243.51275 L 656.84234 220.19263 Z" fill="#222645"/>
+        <path d="M 734.1094 196.87252 L 811.3764 220.19263 L 734.1094 243.51275 L 656.84234 220.19263 Z" stroke="#8d96d5" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"/>
+        <text transform="translate(682.70445 210.22623)" fill="white">
+          <tspan font-family="Roboto Condensed" font-size="16" fill="white" x="37.559666" y="15" xml:space="preserve">heap</tspan>
+        </text>
+      </g>
+      <g id="Graphic_35">
+        <rect x="252" y="21.971671" width="35.16345" height="28.17847" fill="white" fill-opacity="0"/>
+      </g>
+      <g id="Graphic_34">
+        <rect x="927.5084" y="21.971671" width="35.16345" height="28.17847" fill="white" fill-opacity="0"/>
+      </g>
+      <g id="Line_33">
+        <path d="M 543.4865 281.89377 L 734.1094 281.89377 L 734.1094 256.41275" marker-end="url(#FilledArrow_Marker)" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_32">
+        <path d="M 427.81725 407.7252 L 427.81725 396.7252 L 427.7918 385.37677 L 427.76645 375.92833" marker-end="url(#FilledArrow_Marker)" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_31">
+        <path d="M 346.68328 473.31303 L 346.68328 462.31303 L 346.86693 418.1707 L 347.0506 381.92833 L 347.0506 375.92833" marker-end="url(#FilledArrow_Marker)" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_30">
+        <line x1="583.4101" y1="538.90085" x2="583.4101" y2="532.5209" marker-end="url(#FilledArrow_Marker)" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_29">
+        <path d="M 877.7004 355.68925 L 877.8474 355.68925 L 877.4064 520.00085 L 877.4064 526.00085" marker-end="url(#FilledArrow_Marker)" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_28">
+        <line x1="507.65855" y1="325.13314" x2="508.41797" y2="313.71293" marker-end="url(#FilledArrow_Marker)" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_27">
+        <line x1="427.58593" y1="325.13314" x2="427.4774" y2="313.74077" marker-end="url(#FilledArrow_Marker)" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_26">
+        <line x1="347.87234" y1="325.13314" x2="348.36693" y2="313.72924" marker-end="url(#FilledArrow_Marker)" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_25">
+        <line x1="427.35457" y1="262.94618" x2="427.35457" y2="256.41275" marker-end="url(#FilledArrow_Marker)" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_24">
+        <path d="M 427.35457 200.7592 L 427.35457 174.52408 L 326.95367 174.52408 L 326.95367 166.0473" marker-end="url(#FilledArrow_Marker)" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_23">
+        <line x1="761.629" y1="344.08074" x2="556.3865" y2="344.08074" marker-end="url(#FilledArrow_Marker)" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Group_20">
+        <g id="Graphic_22">
+          <path d="M 280.13385 620.52125 L 966 620.52125 C 968.7614 620.52125 971 622.7598 971 625.52125 L 971 638.84136 C 971 641.6028 968.7614 643.84136 966 643.84136 L 280.13385 643.84136 C 277.37242 643.84136 275.13385 641.6028 275.13385 638.84136 L 275.13385 625.52125 C 275.13385 622.7598 277.37242 620.52125 280.13385 620.52125 Z" fill="#222645" fill-opacity=".5"/>
+          <path d="M 280.13385 620.52125 L 966 620.52125 C 968.7614 620.52125 971 622.7598 971 625.52125 L 971 638.84136 C 971 641.6028 968.7614 643.84136 966 643.84136 L 280.13385 643.84136 C 277.37242 643.84136 275.13385 641.6028 275.13385 638.84136 L 275.13385 625.52125 C 275.13385 622.7598 277.37242 620.52125 280.13385 620.52125 Z" stroke="#8d96d5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2.0,2.0" stroke-width=".5"/>
+        </g>
+        <g id="Graphic_21">
+          <text transform="translate(505.9202 623.4763)" fill="white" fill-opacity=".6104329">
+            <tspan font-family="Roboto Condensed" font-weight="bold" font-size="16" fill="white" fill-opacity=".6104329" x="0" y="15" xml:space="preserve">Software / Hardware Boundary</tspan>
+          </text>
+        </g>
+      </g>
+      <g id="Line_19">
+        <line x1="924.7323" y1="154.11898" x2="924.7323" y2="573.881" stroke="white" stroke-opacity=".279161" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+      </g>
+      <g id="Graphic_18">
+        <text transform="translate(939.7542 476.57224) rotate(-90)" fill="white" fill-opacity=".6104329">
+          <tspan font-family="Roboto Condensed" font-weight="bold" font-size="16" fill="white" fill-opacity=".6104329" x="0" y="15" xml:space="preserve">Beyond MM Subsystem</tspan>
+        </text>
+      </g>
+      <g id="Line_14">
+        <line x1="391.7697" y1="664.24646" x2="391.6217" y2="656.73885" marker-end="url(#FilledArrow_Marker)" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_13">
+        <line x1="602.78926" y1="664.24646" x2="602.6549" y2="656.7393" marker-end="url(#FilledArrow_Marker)" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_12">
+        <line x1="805.6675" y1="664.24646" x2="805.6124" y2="656.741" marker-end="url(#FilledArrow_Marker)" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Graphic_10" filter="url(#Shadow)">
+        <a target="_blank" xl:href="https://asterinas.github.io/vostd/ostd/mm/kspace/index.html">
+          <path d="M 482.78636 107.96459 L 588.4556 107.96459 C 591.217 107.96459 593.4556 110.20317 593.4556 112.96459 L 593.4556 149.60482 C 593.4556 152.36624 591.217 154.60482 588.4556 154.60482 L 482.78636 154.60482 C 480.02493 154.60482 477.78636 152.36624 477.78636 149.60482 L 477.78636 112.96459 C 477.78636 110.20317 480.02493 107.96459 482.78636 107.96459 Z" fill="#222645"/>
+          <path d="M 482.78636 107.96459 L 588.4556 107.96459 C 591.217 107.96459 593.4556 110.20317 593.4556 112.96459 L 593.4556 149.60482 C 593.4556 152.36624 591.217 154.60482 588.4556 154.60482 L 482.78636 154.60482 C 480.02493 154.60482 477.78636 152.36624 477.78636 149.60482 L 477.78636 112.96459 C 477.78636 110.20317 480.02493 107.96459 482.78636 107.96459 Z" stroke="#8d96d5" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"/>
+          <text transform="translate(482.78636 112.2847)" fill="white">
+            <tspan font-family="Roboto Condensed" font-weight="bold" font-size="16" fill="white" x="25.764756" y="15" xml:space="preserve">kspace::</tspan>
+            <tspan font-family="Roboto Condensed" font-weight="bold" font-size="16" fill="white" x="20.968813" y="34" xml:space="preserve">kvirt_area</tspan>
+          </text>
+        </a>
+      </g>
+      <g id="Line_9">
+        <path d="M 427.35457 200.7592 L 427.35457 174.52408 L 535.621 174.52408 L 535.621 167.50482" marker-end="url(#FilledArrow_Marker)" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Graphic_8" filter="url(#Shadow)">
+        <a target="_blank" xl:href="https://asterinas.github.io/vostd/ostd/mm/frame/segment/index.html">
+          <path d="M 527.20335 407.7252 L 617.717 407.7252 C 620.4784 407.7252 622.717 409.9638 622.717 412.7252 L 622.717 449.36544 C 622.717 452.12686 620.4784 454.36544 617.717 454.36544 L 527.20335 454.36544 C 524.4419 454.36544 522.20335 452.12686 522.20335 449.36544 L 522.20335 412.7252 C 522.20335 409.9638 524.4419 407.7252 527.20335 407.7252 Z" fill="#222645"/>
+          <path d="M 527.20335 407.7252 L 617.717 407.7252 C 620.4784 407.7252 622.717 409.9638 622.717 412.7252 L 622.717 449.36544 C 622.717 452.12686 620.4784 454.36544 617.717 454.36544 L 527.20335 454.36544 C 524.4419 454.36544 522.20335 452.12686 522.20335 449.36544 L 522.20335 412.7252 C 522.20335 409.9638 524.4419 407.7252 527.20335 407.7252 Z" stroke="#8d96d5" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"/>
+          <text transform="translate(527.20335 412.04533)" fill="white">
+            <tspan font-family="Roboto Condensed" font-weight="bold" font-size="16" fill="white" x="22.200232" y="15" xml:space="preserve">frame::</tspan>
+            <tspan font-family="Roboto Condensed" font-weight="bold" font-size="16" fill="white" x="17.61276" y="34" xml:space="preserve">segment</tspan>
+          </text>
+        </a>
+      </g>
+      <g id="Graphic_7" filter="url(#Shadow)">
+        <a target="_blank" xl:href="https://asterinas.github.io/vostd/ostd/mm/frame/linked_list/index.html">
+          <path d="M 638.29735 407.7252 L 728.811 407.7252 C 731.5724 407.7252 733.811 409.9638 733.811 412.7252 L 733.811 449.36544 C 733.811 452.12686 731.5724 454.36544 728.811 454.36544 L 638.29735 454.36544 C 635.5359 454.36544 633.29735 452.12686 633.29735 449.36544 L 633.29735 412.7252 C 633.29735 409.9638 635.5359 407.7252 638.29735 407.7252 Z" fill="#222645"/>
+          <path d="M 638.29735 407.7252 L 728.811 407.7252 C 731.5724 407.7252 733.811 409.9638 733.811 412.7252 L 733.811 449.36544 C 733.811 452.12686 731.5724 454.36544 728.811 454.36544 L 638.29735 454.36544 C 635.5359 454.36544 633.29735 452.12686 633.29735 449.36544 L 633.29735 412.7252 C 633.29735 409.9638 635.5359 407.7252 638.29735 407.7252 Z" stroke="#8d96d5" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"/>
+          <text transform="translate(638.29735 412.04533)" fill="white">
+            <tspan font-family="Roboto Condensed" font-weight="bold" font-size="16" fill="white" x="22.200232" y="15" xml:space="preserve">frame::</tspan>
+            <tspan font-family="Roboto Condensed" font-weight="bold" font-size="16" fill="white" x="12.432132" y="34" xml:space="preserve">linked_list</tspan>
+          </text>
+        </a>
+      </g>
+      <g id="Graphic_6" filter="url(#Shadow)">
+        <a target="_blank" xl:href="https://asterinas.github.io/vostd/ostd/mm/frame/unique/index.html">
+          <path d="M 752.4143 407.7252 L 842.9279 407.7252 C 845.6894 407.7252 847.9279 409.9638 847.9279 412.7252 L 847.9279 449.36544 C 847.9279 452.12686 845.6894 454.36544 842.9279 454.36544 L 752.4143 454.36544 C 749.6529 454.36544 747.4143 452.12686 747.4143 449.36544 L 747.4143 412.7252 C 747.4143 409.9638 749.6529 407.7252 752.4143 407.7252 Z" fill="#222645"/>
+          <path d="M 752.4143 407.7252 L 842.9279 407.7252 C 845.6894 407.7252 847.9279 409.9638 847.9279 412.7252 L 847.9279 449.36544 C 847.9279 452.12686 845.6894 454.36544 842.9279 454.36544 L 752.4143 454.36544 C 749.6529 454.36544 747.4143 452.12686 747.4143 449.36544 L 747.4143 412.7252 C 747.4143 409.9638 749.6529 407.7252 752.4143 407.7252 Z" stroke="#8d96d5" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"/>
+          <text transform="translate(752.4143 412.04533)" fill="white">
+            <tspan font-family="Roboto Condensed" font-weight="bold" font-size="16" fill="white" x="22.200232" y="15" xml:space="preserve">frame::</tspan>
+            <tspan font-family="Roboto Condensed" font-weight="bold" font-size="16" fill="white" x="23.62766" y="34" xml:space="preserve">unique</tspan>
+          </text>
+        </a>
+      </g>
+      <g id="Line_5">
+        <line x1="572.48535" y1="473.31303" x2="572.48535" y2="467.2654" marker-end="url(#FilledArrow_Marker)" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_4">
+        <line x1="683.5368" y1="473.31303" x2="683.5368" y2="467.2654" marker-end="url(#FilledArrow_Marker)" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_3">
+        <line x1="796.7277" y1="473.31303" x2="796.7277" y2="467.2309" marker-end="url(#FilledArrow_Marker)" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Graphic_2">
+        <text transform="translate(287.53668 53.767705)" fill="white" fill-opacity=".6104329">
+          <tspan font-family="Roboto Condensed" font-weight="bold" font-size="16" fill="white" fill-opacity=".6104329" x="0" y="15" xml:space="preserve">Verified Modules</tspan>
+        </text>
+      </g>
+      <g id="Graphic_74" filter="url(#Shadow)">
+        <a target="_blank" xl:href="https://asterinas.github.io/vostd/ostd/mm/io/index.html">
+          <path d="M 391.1763 106.50708 L 462.60746 106.50708 C 465.3689 106.50708 467.60746 108.74566 467.60746 111.50708 L 467.60746 148.1473 C 467.60746 150.90873 465.3689 153.1473 462.60746 153.1473 L 391.1763 153.1473 C 388.4149 153.1473 386.1763 150.90873 386.1763 148.1473 L 386.1763 111.50708 C 386.1763 108.74566 388.4149 106.50708 391.1763 106.50708 Z" fill="#222645"/>
+          <path d="M 391.1763 106.50708 L 462.60746 106.50708 C 465.3689 106.50708 467.60746 108.74566 467.60746 111.50708 L 467.60746 148.1473 C 467.60746 150.90873 465.3689 153.1473 462.60746 153.1473 L 391.1763 153.1473 C 388.4149 153.1473 386.1763 150.90873 386.1763 148.1473 L 386.1763 111.50708 C 386.1763 108.74566 388.4149 106.50708 391.1763 106.50708 Z" stroke="#8d96d5" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"/>
+          <text transform="translate(391.1763 110.8272)" fill="white">
+            <tspan font-family="Roboto Condensed" font-weight="bold" font-size="16" fill="white" x="29.717896" y="15" xml:space="preserve">io</tspan>
+            <tspan font-family="Roboto Condensed" font-weight="bold" font-size="16" fill="white" x="13.764576" y="34" xml:space="preserve">(VmIo)</tspan>
+          </text>
+        </a>
+      </g>
+      <g id="Line_75">
+        <path d="M 427.35457 200.7592 L 427.35457 189.7592 L 427.12323 176.95326 L 426.8919 172.0473 L 426.8919 166.0473" marker-end="url(#FilledArrow_Marker)" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Graphic_58" filter="url(#Shadow)">
+        <path d="M 365.2664 407.7252 L 490.3681 407.7252 C 493.1295 407.7252 495.3681 409.9638 495.3681 412.7252 L 495.3681 449.36544 C 495.3681 452.12686 493.1295 454.36544 490.3681 454.36544 L 365.2664 454.36544 C 362.505 454.36544 360.2664 452.12686 360.2664 449.36544 L 360.2664 412.7252 C 360.2664 409.9638 362.505 407.7252 365.2664 407.7252 Z" fill="#222645"/>
+        <path d="M 365.2664 407.7252 L 490.3681 407.7252 C 493.1295 407.7252 495.3681 409.9638 495.3681 412.7252 L 495.3681 449.36544 C 495.3681 452.12686 493.1295 454.36544 490.3681 454.36544 L 365.2664 454.36544 C 362.505 454.36544 360.2664 452.12686 360.2664 449.36544 L 360.2664 412.7252 C 360.2664 409.9638 362.505 407.7252 365.2664 407.7252 Z" stroke="#8d96d5" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"/>
+        <text transform="translate(365.2664 421.54533)" fill="white">
+          <tspan font-family="Roboto Condensed" font-weight="bold" font-size="16" fill="white" x="8.587151" y="15" xml:space="preserve">frame::frame_ref</tspan>
+        </text>
+      </g>
+      <g id="Graphic_79">
+        <text transform="translate(779.1579 94.79462)" fill="white" fill-opacity=".6104329">
+          <tspan font-family="Roboto Condensed" font-weight="bold" font-size="16" fill="white" fill-opacity=".6104329" x="0" y="15" xml:space="preserve">Unverified Modules</tspan>
+          <tspan font-family="Roboto Condensed" font-weight="bold" font-size="16" fill="white" fill-opacity=".6104329" x="84.06079" y="34" xml:space="preserve">in MM</tspan>
+        </text>
+      </g>
+      <g id="Graphic_82">
+        <path d="M 304.9765 673.113 C 304.9765 672.5072 304.5124 672.0198 303.9355 672.0198 C 303.3586 672.0198 302.89447 672.5072 302.89447 673.113 L 302.89447 674.93484 C 301.3633 674.93484 300.1184 676.24205 300.1184 677.84986 L 298.38337 677.84986 C 297.80647 677.84986 297.34234 678.3372 297.34234 678.943 C 297.34234 679.5488 297.80647 680.0361 298.38337 680.0361 L 300.1184 680.0361 L 300.1184 682.58676 L 298.38337 682.58676 C 297.80647 682.58676 297.34234 683.0741 297.34234 683.6799 C 297.34234 684.2857 297.80647 684.773 298.38337 684.773 L 300.1184 684.773 L 300.1184 687.32365 L 298.38337 687.32365 C 297.80647 687.32365 297.34234 687.811 297.34234 688.4168 C 297.34234 689.0226 297.80647 689.5099 298.38337 689.5099 L 300.1184 689.5099 C 300.1184 691.1177 301.3633 692.4249 302.89447 692.4249 L 302.89447 694.2468 C 302.89447 694.8526 303.3586 695.33994 303.9355 695.33994 C 304.5124 695.33994 304.9765 694.8526 304.9765 694.2468 L 304.9765 692.4249 L 307.40557 692.4249 L 307.40557 694.2468 C 307.40557 694.8526 307.8697 695.33994 308.4466 695.33994 C 309.0235 695.33994 309.4876 694.8526 309.4876 694.2468 L 309.4876 692.4249 L 311.91667 692.4249 L 311.91667 694.2468 C 311.91667 694.8526 312.3808 695.33994 312.9577 695.33994 C 313.5346 695.33994 313.9987 694.8526 313.9987 694.2468 L 313.9987 692.4249 C 315.5299 692.4249 316.77477 691.1177 316.77477 689.5099 L 318.5098 689.5099 C 319.0867 689.5099 319.55084 689.0226 319.55084 688.4168 C 319.55084 687.811 319.0867 687.32365 318.5098 687.32365 L 316.77477 687.32365 L 316.77477 684.773 L 318.5098 684.773 C 319.0867 684.773 319.55084 684.2857 319.55084 683.6799 C 319.55084 683.0741 319.0867 682.58676 318.5098 682.58676 L 316.77477 682.58676 L 316.77477 680.0361 L 318.5098 680.0361 C 319.0867 680.0361 319.55084 679.5488 319.55084 678.943 C 319.55084 678.3372 319.0867 677.84986 318.5098 677.84986 L 316.77477 677.84986 C 316.77477 676.24205 315.5299 674.93484 313.9987 674.93484 L 313.9987 673.113 C 313.9987 672.5072 313.5346 672.0198 312.9577 672.0198 C 312.3808 672.0198 311.91667 672.5072 311.91667 673.113 L 311.91667 674.93484 L 309.4876 674.93484 L 309.4876 673.113 C 309.4876 672.5072 309.0235 672.0198 308.4466 672.0198 C 307.8697 672.0198 307.40557 672.5072 307.40557 673.113 L 307.40557 674.93484 L 304.9765 674.93484 Z M 304.2825 677.84986 L 312.6107 677.84986 C 313.37844 677.84986 313.9987 678.5012 313.9987 679.3074 L 313.9987 688.0524 C 313.9987 688.8586 313.37844 689.5099 312.6107 689.5099 L 304.2825 689.5099 C 303.51474 689.5099 302.89447 688.8586 302.89447 688.0524 L 302.89447 679.3074 C 302.89447 678.5012 303.51474 677.84986 304.2825 677.84986 Z M 304.9765 680.0361 L 304.9765 687.32365 L 311.91667 687.32365 L 311.91667 680.0361 Z" fill="white"/>
+      </g>
+      <g id="Graphic_95">
+        <path d="M 521.278 684.65156 C 522.8112 684.65156 524.05405 683.3465 524.05405 681.73654 L 524.05405 679.7932 C 524.05405 678.1833 522.8112 676.8782 521.278 676.8782 C 519.7448 676.8782 518.5019 678.1833 518.5019 679.7932 L 518.5019 681.73654 C 518.5019 683.3465 519.7448 684.65156 521.278 684.65156 Z M 520.35264 679.7932 C 520.35264 679.2566 520.76693 678.8215 521.278 678.8215 C 521.78905 678.8215 522.20335 679.2566 522.20335 679.7932 L 522.20335 681.73654 C 522.20335 682.2732 521.78905 682.7082 521.278 682.7082 C 520.76693 682.7082 520.35264 682.2732 520.35264 681.73654 Z M 535.1583 679.7932 C 535.1583 678.1833 533.9154 676.8782 532.38224 676.8782 C 530.84906 676.8782 529.6062 678.1833 529.6062 679.7932 L 529.6062 681.73654 C 529.6062 683.3465 530.84906 684.65156 532.38224 684.65156 C 533.9154 684.65156 535.1583 683.3465 535.1583 681.73654 Z M 533.3076 681.73654 C 533.3076 682.2732 532.8933 682.7082 532.38224 682.7082 C 531.8712 682.7082 531.4569 682.2732 531.4569 681.73654 L 531.4569 679.7932 C 531.4569 679.2566 531.8712 678.8215 532.38224 678.8215 C 532.8933 678.8215 533.3076 679.2566 533.3076 679.7932 Z M 526.8301 684.65156 C 526.31906 684.65156 525.90476 684.2165 525.90476 683.6799 L 525.90476 677.84986 C 525.90476 677.3132 526.31906 676.8782 526.8301 676.8782 C 527.3412 676.8782 527.7555 677.3132 527.7555 677.84986 L 527.7555 683.6799 C 527.7555 684.2165 527.3412 684.65156 526.8301 684.65156 Z M 538.8597 677.84986 L 538.8597 683.6799 C 538.8597 684.2165 538.4454 684.65156 537.93436 684.65156 C 537.4233 684.65156 537.009 684.2165 537.009 683.6799 L 537.009 677.84986 C 537.009 677.3132 537.4233 676.8782 537.93436 676.8782 C 538.4454 676.8782 538.8597 677.3132 538.8597 677.84986 Z M 524.05405 691.45326 L 524.05405 689.5099 C 524.05405 687.9 522.8112 686.5949 521.278 686.5949 C 519.7448 686.5949 518.5019 687.9 518.5019 689.5099 L 518.5019 691.45326 C 518.5019 693.0632 519.7448 694.3683 521.278 694.3683 C 522.8112 694.3683 524.05405 693.0632 524.05405 691.45326 Z M 520.35264 691.45326 L 520.35264 689.5099 C 520.35264 688.9733 520.76693 688.53824 521.278 688.53824 C 521.78905 688.53824 522.20335 688.9733 522.20335 689.5099 L 522.20335 691.45326 C 522.20335 691.9899 521.78905 692.4249 521.278 692.4249 C 520.76693 692.4249 520.35264 691.9899 520.35264 691.45326 Z M 525.90476 691.45326 C 525.90476 693.0632 527.14765 694.3683 528.6808 694.3683 C 530.214 694.3683 531.4569 693.0632 531.4569 691.45326 L 531.4569 689.5099 C 531.4569 687.9 530.214 686.5949 528.6808 686.5949 C 527.14765 686.5949 525.90476 687.9 525.90476 689.5099 Z M 527.7555 689.5099 C 527.7555 688.9733 528.16976 688.53824 528.6808 688.53824 C 529.1919 688.53824 529.6062 688.9733 529.6062 689.5099 L 529.6062 691.45326 C 529.6062 691.9899 529.1919 692.4249 528.6808 692.4249 C 528.16976 692.4249 527.7555 691.9899 527.7555 691.45326 Z M 538.8597 687.5666 L 538.8597 693.3966 C 538.8597 693.9332 538.4454 694.3683 537.93436 694.3683 C 537.4233 694.3683 537.009 693.9332 537.009 693.3966 L 537.009 687.5666 C 537.009 687.0299 537.4233 686.5949 537.93436 686.5949 C 538.4454 686.5949 538.8597 687.0299 538.8597 687.5666 Z M 534.23295 686.5949 C 534.744 686.5949 535.1583 687.0299 535.1583 687.5666 L 535.1583 693.3966 C 535.1583 693.9332 534.744 694.3683 534.23295 694.3683 C 533.7219 694.3683 533.3076 693.9332 533.3076 693.3966 L 533.3076 687.5666 C 533.3076 687.0299 533.7219 686.5949 534.23295 686.5949 Z" fill="white"/>
+      </g>
+      <g id="Graphic_96">
+        <path d="M 724.4124 688.9202 L 724.85586 686.09745 L 723.87995 685.9285 C 723.9081 685.0135 723.8206 684.1157 723.63 683.2537 L 724.5496 682.89 L 723.59 680.2121 L 722.6549 680.582 C 722.2433 679.7994 721.7376 679.0745 721.151 678.4258 L 721.8073 677.5864 L 719.7012 675.7713 L 719.02045 676.6426 C 718.3078 676.1996 717.5336 675.846 716.7097 675.5984 L 716.8936 674.4288 L 714.20545 673.9632 L 714.0119 675.1927 C 713.1791 675.18805 712.3634 675.29395 711.57955 675.49874 L 711.1428 674.2809 L 708.5925 675.2885 L 709.0501 676.56554 C 708.3552 676.9829 707.71005 677.4867 707.13014 678.0661 L 706.0912 677.1706 L 704.3626 679.38205 L 705.43195 680.304 C 705.0367 681.0048 704.7163 681.7625 704.4835 682.5669 L 703.0923 682.3255 L 702.64884 685.1482 L 704.0541 685.392 C 704.0371 686.22905 704.1157 687.05134 704.2825 687.84404 L 702.9455 688.3728 L 703.9051 691.0507 L 705.23024 690.5274 C 705.604 691.257 706.0586 691.9384 706.5851 692.5559 L 705.7078 693.67874 L 707.8139 695.4939 L 708.663 694.4068 C 709.3289 694.8499 710.0519 695.21276 710.8224 695.4822 L 710.61255 696.8176 L 713.3007 697.2833 L 713.501 696.007 C 714.336 696.04985 715.1569 695.98054 715.9489 695.8108 L 716.3627 696.9664 L 718.9129 695.9587 L 718.5184 694.85846 C 719.2644 694.4528 719.9593 693.94895 720.5844 693.3618 L 721.4142 694.07665 L 723.1428 691.8652 L 722.3479 691.1799 C 722.798 690.43396 723.1621 689.6202 723.42315 688.74966 L 724.4131 688.921 Z M 721.1495 690.1505 C 721.0605 690.3039 720.9678 690.4542 720.8714 690.6006 C 720.8707 690.6014 720.8699 690.6029 720.8692 690.6037 C 720.8403 690.6473 720.8106 690.6909 720.7809 690.7345 C 720.775 690.7431 720.7691 690.7517 720.7631 690.7602 C 720.7342 690.8015 720.7053 690.8428 720.6756 690.884 C 720.6697 690.8926 720.663 690.9012 720.65635 690.9105 C 720.62595 690.9526 720.59554 690.9946 720.5644 691.0359 C 720.5622 691.039 720.5592 691.0429 720.557 691.046 C 720.4198 691.2282 720.2759 691.4042 720.1254 691.57395 C 720.1217 691.57785 720.118 691.5825 720.1143 691.5872 C 720.0794 691.6261 720.0446 691.6651 720.009 691.7032 C 720.003 691.70945 719.9971 691.7157 719.9919 691.7219 C 719.9563 691.7601 719.92 691.799 719.8836 691.8364 C 719.8799 691.8395 719.877 691.8434 719.874 691.8465 C 719.7146 692.0116 719.5492 692.1704 719.3786 692.3215 C 718.9433 692.70694 718.4717 693.0449 717.9711 693.33145 C 717.82875 693.4124 717.68415 693.4895 717.5381 693.56194 C 717.5284 693.5666 717.5188 693.5721 717.5091 693.5767 C 717.4669 693.597 717.4246 693.6172 717.3823 693.6375 C 717.3697 693.6429 717.3571 693.64915 717.34525 693.6546 C 717.303 693.6741 717.26 693.6935 717.217 693.713 C 717.2066 693.7177 717.1962 693.72235 717.1858 693.72624 C 716.9329 693.8368 716.6749 693.9349 716.4116 694.019 C 716.4064 694.0206 716.402 694.02215 716.3968 694.0237 C 716.3456 694.04006 716.29445 694.0556 716.2425 694.0712 C 716.2388 694.072 716.2351 694.0735 716.2314 694.0743 C 715.9585 694.1553 715.6804 694.2215 715.3979 694.2729 C 714.8625 694.3702 714.3122 694.4138 713.7538 694.399 C 713.6181 694.3951 713.4824 694.3881 713.346 694.378 C 713.3311 694.37645 713.3163 694.3757 713.3015 694.3741 C 713.26366 694.371 713.2251 694.3679 713.1865 694.364 C 713.1517 694.3609 713.1161 694.357 713.0812 694.3531 C 713.0434 694.3492 713.0056 694.3445 712.9678 694.33985 C 712.9248 694.3344 712.88175 694.32895 712.8395 694.3227 C 712.818 694.3196 712.7965 694.3165 712.775 694.3134 C 712.7164 694.3048 712.6578 694.2955 712.5992 694.28534 C 712.59624 694.2846 712.5925 694.2846 712.5896 694.2838 C 712.5762 694.28145 712.5636 694.2791 712.5503 694.2768 C 712.4954 694.2674 712.44126 694.2573 712.3871 694.2464 C 712.35375 694.2394 712.3204 694.2324 712.287 694.2254 C 712.2536 694.2184 712.2203 694.2114 712.1876 694.20436 C 712.14685 694.195 712.1068 694.1857 712.066 694.17555 C 712.04155 694.1693 712.0163 694.1639 711.9919 694.1576 C 711.9459 694.14596 711.90065 694.1343 711.8554 694.1218 C 711.8376 694.11715 711.8191 694.1125 711.8013 694.107 C 711.7516 694.093 711.7012 694.079 711.6522 694.0642 C 711.6396 694.0603 711.627 694.0564 711.6144 694.0533 C 711.561 694.0369 711.5069 694.0198 711.4542 694.0027 C 711.4468 694.00034 711.4394 693.998 711.432 693.9957 C 711.3749 693.977 711.3178 693.9575 711.2614 693.9373 C 711.2592 693.9365 711.257 693.9357 711.25475 693.9349 C 711.1947 693.9139 711.13535 693.8921 711.0768 693.8695 C 710.5725 693.6772 710.09345 693.4366 709.6433 693.1539 C 709.6344 693.1485 709.6255 693.1422 709.6166 693.1368 C 709.5721 693.10875 709.5284 693.0807 709.4846 693.0511 C 709.4631 693.0371 709.4416 693.0223 709.4194 693.0075 C 709.3882 692.9865 709.3563 692.9647 709.3252 692.9437 C 709.30146 692.9273 709.2777 692.9102 709.25325 692.89305 C 709.2251 692.8728 709.1969 692.8533 709.16946 692.8331 C 709.14424 692.8152 709.119 692.7965 709.0946 692.7778 C 709.0686 692.7583 709.0434 692.7389 709.0182 692.7194 C 708.993 692.6999 708.9663 692.6797 708.9403 692.65944 C 708.9181 692.6415 708.8958 692.6244 708.8736 692.6065 C 708.7653 692.5201 708.65926 692.4313 708.5554 692.3394 C 708.5436 692.3293 708.5317 692.3184 708.51984 692.30826 C 708.4857 692.2779 708.4524 692.2475 708.419 692.2164 C 708.4071 692.2055 708.396 692.19535 708.3841 692.18444 C 708.35 692.1525 708.3159 692.1198 708.2818 692.0871 C 708.2729 692.07854 708.26474 692.07076 708.2566 692.0622 C 708.2195 692.0264 708.1832 691.99055 708.1468 691.95395 L 708.1461 691.9532 C 707.9414 691.7468 707.7471 691.53035 707.5632 691.30375 C 707.2243 690.8864 706.92325 690.4371 706.66296 689.9613 C 706.5525 689.7596 706.4501 689.5533 706.3552 689.3422 C 706.3515 689.33445 706.3485 689.3267 706.3448 689.31966 C 706.3233 689.27216 706.30255 689.22466 706.2825 689.17716 C 706.2788 689.1686 706.2751 689.16 706.27215 689.1515 C 706.2514 689.1024 706.2306 689.0526 706.2106 689.0027 C 706.20986 689.0004 706.2091 688.99806 706.2076 688.9957 C 706.1209 688.78 706.0423 688.55966 705.9718 688.3362 C 705.9703 688.3323 705.9696 688.3292 705.9681 688.3253 C 705.9518 688.2731 705.9355 688.22015 705.92065 688.1672 C 705.9184 688.1602 705.9169 688.1532 705.9147 688.1462 C 705.8991 688.0932 705.8843 688.0403 705.8695 687.98654 C 705.8687 687.9834 705.868 687.9803 705.86725 687.9772 C 705.8057 687.7483 705.7523 687.5154 705.7078 687.2803 C 705.60844 686.7492 705.5543 686.2041 705.5506 685.6497 C 705.5491 685.47606 705.5536 685.3024 705.5617 685.1272 C 705.5625 685.1101 705.5632 685.09294 705.56395 685.0758 C 705.5662 685.0338 705.5691 684.9917 705.5721 684.9489 C 705.5743 684.9201 705.5758 684.89204 705.578 684.864 C 705.581 684.8274 705.584 684.79 705.5877 684.75266 C 705.59065 684.7176 705.59435 684.6826 705.5981 684.64676 C 705.601 684.6148 705.6047 684.5821 705.60844 684.5502 C 705.6136 684.5074 705.6188 684.4638 705.624 684.42016 C 705.627 684.3945 705.62995 684.36954 705.6337 684.34385 C 705.6433 684.27454 705.6529 684.2045 705.6641 684.13516 C 705.67444 684.0674 705.6863 684.00045 705.6982 683.9335 C 705.7019 683.9132 705.7056 683.893 705.7093 683.8735 C 705.7182 683.8245 705.7278 683.7754 705.7382 683.7271 C 705.7419 683.7069 705.7464 683.6866 705.7508 683.6672 C 705.7642 683.6033 705.7783 683.5395 705.7931 683.4756 C 705.7938 683.4733 705.7938 683.4717 705.7946 683.4694 C 705.8094 683.404 705.8257 683.33934 705.842 683.2747 C 705.8472 683.25524 705.8524 683.2358 705.8576 683.2163 C 705.8702 683.1688 705.8828 683.1221 705.8962 683.0754 C 705.9014 683.0559 705.9073 683.03565 705.9125 683.0162 C 705.92954 682.9562 705.9473 682.8963 705.9659 682.8363 C 705.9674 682.8324 705.9681 682.8285 705.9696 682.8246 C 706.135 682.292 706.3463 681.7851 706.5977 681.30775 C 706.6259 681.2548 706.65406 681.20185 706.683 681.1497 L 706.683 681.1489 C 706.8246 680.8927 706.9781 680.6443 707.142 680.406 C 707.1472 680.399 707.15165 680.392 707.1568 680.3842 C 707.185 680.3437 707.2139 680.3025 707.2429 680.26275 C 707.251 680.25185 707.2592 680.24095 707.2666 680.2293 C 707.2948 680.1903 707.32295 680.1522 707.3511 680.114 C 707.3593 680.1031 707.3682 680.0914 707.37634 680.0805 C 707.4668 679.9614 707.56025 679.8446 707.6559 679.7309 C 707.6678 679.7169 707.6789 679.7029 707.6908 679.6896 C 707.7152 679.6616 707.7397 679.6336 707.7642 679.6055 C 707.782 679.5845 707.8005 679.5643 707.8183 679.544 C 707.8413 679.5183 707.8643 679.4926 707.8873 679.4677 C 707.90805 679.4451 707.9281 679.4233 707.9488 679.40074 C 707.9711 679.3766 707.9933 679.35324 708.0163 679.3291 C 708.0393 679.305 708.06155 679.2816 708.0845 679.25824 C 708.10605 679.2364 708.12755 679.2146 708.1491 679.1928 C 708.17576 679.1656 708.2032 679.1391 708.2306 679.1126 C 708.2484 679.0955 708.2662 679.0776 708.284 679.06046 C 708.6837 678.67734 709.1168 678.3355 709.5781 678.0396 C 709.6567 677.989 709.73676 677.9399 709.81685 677.8924 C 709.8398 677.8792 709.8621 677.8652 709.8851 677.8519 C 709.9162 677.834 709.9474 677.8161 709.97925 677.7982 C 710.0015 677.78575 710.0245 677.7725 710.0475 677.76005 C 710.0801 677.7421 710.1127 677.7242 710.1454 677.7071 C 710.1661 677.6962 710.1876 677.6845 710.2091 677.6736 C 710.244 677.6557 710.2781 677.6378 710.31296 677.6199 C 710.33 677.6113 710.3478 677.60276 710.3649 677.5942 C 710.5517 677.50075 710.7423 677.4151 710.9366 677.33644 C 710.9448 677.3333 710.9529 677.3294 710.9611 677.3263 C 711.0078 677.3076 711.0545 677.28894 711.102 677.271 C 711.1101 677.2679 711.1183 677.2648 711.12646 677.2617 C 711.1754 677.243 711.22434 677.2251 711.274 677.208 C 711.27625 677.2072 711.2792 677.2064 711.28144 677.2056 C 711.5506 677.1106 711.825 677.02964 712.1046 676.9627 C 712.64445 676.8342 713.2014 676.761 713.7687 676.74776 C 713.8295 676.7462 713.891 676.7454 713.9526 676.7454 C 713.9578 676.7454 713.96296 676.7454 713.96815 676.7454 C 714.026 676.7454 714.0831 676.7462 714.1409 676.74776 C 714.1513 676.74776 714.16095 676.7485 714.1713 676.7485 C 714.2247 676.7501 714.2789 676.75165 714.33226 676.7548 C 714.3478 676.75554 714.3627 676.7563 714.3782 676.7571 C 714.4279 676.7594 714.4769 676.76255 714.52655 676.76645 C 714.5473 676.768 714.5688 676.7696 714.5896 676.7711 C 714.6341 676.775 714.6786 676.7781 714.7238 676.7828 C 714.75124 676.7851 714.7794 676.78825 714.8069 676.7914 C 714.8454 676.79526 714.884 676.7999 714.9233 676.8038 C 714.9611 676.8085 714.9989 676.81395 715.03675 676.8186 C 715.0664 676.8225 715.0953 676.8264 715.125 676.8303 C 715.1932 676.8404 715.2614 676.8513 715.3297 676.863 C 715.392 676.8739 715.45425 676.8856 715.5165 676.89804 C 715.5358 676.9019 715.55584 676.9058 715.5751 676.9097 C 715.6196 676.9191 715.66486 676.9284 715.70935 676.9385 C 715.742 676.94554 715.7739 676.9533 715.80575 676.9611 C 715.8443 676.9705 715.8821 676.979 715.9207 676.98915 C 715.957 676.9985 715.9934 677.0078 716.0297 677.0172 C 716.0453 677.0211 716.0601 677.02575 716.0757 677.02964 C 716.2077 677.0655 716.3382 677.1044 716.4672 677.14644 C 717.0301 677.3302 717.564 677.5724 718.0646 677.86595 C 718.1076 677.89165 718.1506 677.91734 718.1929 677.94304 C 718.20324 677.9493 718.2136 677.9555 718.22475 677.9625 C 718.2648 677.9874 718.3048 678.01234 718.3449 678.03804 C 718.35675 678.0458 718.36936 678.0536 718.3812 678.0614 C 718.4213 678.0871 718.4606 678.1136 718.4999 678.14005 C 718.5095 678.1463 718.51915 678.1533 718.5288 678.1595 C 718.7097 678.28255 718.8855 678.4126 719.0553 678.5489 C 719.062 678.5543 719.06866 678.559 719.0753 678.5644 C 719.1139 678.5956 719.1517 678.6267 719.1895 678.6579 C 719.1992 678.6657 719.2081 678.67345 719.2177 678.6812 C 719.2548 678.7124 719.2926 678.7443 719.32895 678.777 C 719.3364 678.784 719.3438 678.79025 719.3519 678.7973 C 719.5618 678.981 719.762 679.1757 719.9526 679.3797 C 719.9585 679.38595 719.9637 679.3914 719.9697 679.3976 C 720.0045 679.435 720.0394 679.4732 720.0735 679.5113 C 720.0787 679.51755 720.0846 679.5238 720.0898 679.53 C 720.1254 679.5697 720.16024 679.6094 720.1951 679.6499 C 720.5896 680.1086 720.93815 680.6093 721.2333 681.14344 C 721.2363 681.1481 721.2385 681.1536 721.24145 681.1582 C 721.2696 681.20885 721.2971 681.26025 721.3238 681.3109 C 721.3356 681.3327 721.34675 681.35525 721.3579 681.3778 C 721.3757 681.4129 721.3942 681.4479 721.4113 681.4837 C 721.4239 681.5094 721.4372 681.5359 721.4498 681.5616 C 721.4654 681.5935 721.481 681.62545 721.4958 681.6574 C 721.5092 681.6854 721.5225 681.71344 721.5351 681.74225 C 721.5485 681.77184 721.5618 681.8022 721.57516 681.8318 C 721.5885 681.8614 721.6026 681.89254 721.6159 681.9229 C 721.6271 681.9486 721.6382 681.9751 721.6493 682.0008 C 721.7049 682.1324 721.7576 682.2655 721.8065 682.40024 C 721.8117 682.4135 721.8169 682.4275 721.8214 682.4407 C 721.8377 682.4851 721.85324 682.5303 721.8688 682.57545 C 721.8733 682.5895 721.8785 682.6035 721.8829 682.6167 C 721.8985 682.66344 721.91405 682.7102 721.9296 682.7577 C 721.9326 682.7678 721.9363 682.7779 721.9393 682.7888 C 722.0453 683.1244 722.1336 683.4678 722.201 683.81745 C 722.3167 684.41704 722.3746 685.0353 722.3679 685.6645 C 722.3679 685.6723 722.36715 685.6801 722.36715 685.6879 C 722.3664 685.7463 722.3649 685.8039 722.3627 685.8623 C 722.362 685.8849 722.3612 685.9082 722.3597 685.9308 C 722.35825 685.97675 722.356 686.0227 722.3531 686.0686 C 722.3516 686.0912 722.3508 686.1138 722.34935 686.1364 C 722.34565 686.19946 722.3412 686.2625 722.336 686.3256 C 722.3353 686.3342 722.3345 686.3427 722.3338 686.3513 C 722.3286 686.412 722.3227 686.47356 722.316 686.5343 C 722.3138 686.5561 722.3115 686.5779 722.3086 686.5997 C 722.3034 686.648 722.29744 686.6963 722.2915 686.7438 C 722.28855 686.7648 722.2863 686.7858 722.28335 686.8068 C 722.27446 686.873 722.2648 686.94 722.2544 687.00696 C 722.2544 687.0077 722.2544 687.0085 722.2544 687.0093 C 722.2544 687.0101 722.2537 687.0116 722.2537 687.0132 C 722.2433 687.0809 722.23144 687.1487 722.2188 687.2164 C 722.2144 687.2429 722.2092 687.2686 722.204 687.2943 C 722.19585 687.3363 722.1884 687.3784 722.1795 687.4197 C 722.1729 687.4524 722.1662 687.4843 722.1595 687.5162 C 722.1521 687.5505 722.1447 687.584 722.1373 687.6182 C 722.1291 687.6548 722.1202 687.6914 722.11205 687.72724 C 722.1054 687.7545 722.0987 687.78175 722.092 687.809 C 722.08165 687.8503 722.0713 687.89154 722.0609 687.932 C 722.0564 687.9484 722.052 687.9647 722.0475 687.9811 C 722.0023 688.1501 721.9519 688.3167 721.8977 688.481 C 721.7027 689.0705 721.4513 689.6272 721.151 690.1474 Z M 715.1969 677.73435 C 711.0753 677.0203 707.18205 679.9497 706.502 684.27766 C 705.822 688.6056 708.6118 692.6937 712.7334 693.4078 C 716.8551 694.1218 720.7483 691.1924 721.4283 686.86446 C 722.10834 682.5365 719.3186 678.4484 715.1969 677.73435 Z M 717.6041 686.9104 L 715.3193 684.9419 L 710.4909 691.12 L 709.2911 690.0859 L 714.1194 683.9078 L 711.0516 681.2641 L 715.452 679.6507 L 720.1276 683.6796 L 717.6033 686.9096 Z" fill="white"/>
+      </g>
+    </g>
+  </g>
+</svg>

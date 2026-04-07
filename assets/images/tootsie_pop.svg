@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-34 -9 765 454" width="765" height="454">
+  <defs>
+    <filter id="Shadow" filterUnits="userSpaceOnUse" x="-110.5" y="-54.4">
+      <feGaussianBlur in="SourceAlpha" result="blur" stdDeviation="1.744"/>
+      <feOffset in="blur" result="offset" dx="2" dy="2"/>
+      <feFlood flood-color="#afb8ff" flood-opacity=".5" result="flood"/>
+      <feComposite in="flood" in2="offset" operator="in" result="color"/>
+      <feMerge>
+        <feMergeNode in="color"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient x1="0" x2="1" id="Gradient" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#402d1e" stop-opacity=".9242408"/>
+      <stop offset="1" stop-color="#3f2144"/>
+    </linearGradient>
+    <linearGradient id="Obj_Gradient" xl:href="#Gradient" gradientTransform="translate(281.5 255.5) rotate(135) scale(278.60007)"/>
+  </defs>
+  <g id="Tootsie_Pop" stroke-opacity="1" stroke="none" fill="none" stroke-dasharray="none" fill-opacity="1">
+    <title>Tootsie Pop</title>
+    <rect fill="#000314" x="-34" y="-9" width="765" height="454"/>
+    <g id="Tootsie_Pop_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_168" filter="url(#Shadow)">
+        <path d="M -9 212 L 377 212 C 379.76142 212 382 214.23858 382 217 L 382 433 C 382 435.7614 379.76142 438 377 438 L -9 438 C -11.761424 438 -14 435.7614 -14 433 L -14 217 C -14 214.23858 -11.761424 212 -9 212 Z" fill="#292929"/>
+        <path d="M -9 212 L 377 212 C 379.76142 212 382 214.23858 382 217 L 382 433 C 382 435.7614 379.76142 438 377 438 L -9 438 C -11.761424 438 -14 435.7614 -14 433 L -14 217 C -14 214.23858 -11.761424 212 -9 212 Z" stroke="#8d96d5" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"/>
+      </g>
+      <g id="Graphic_164" filter="url(#Shadow)">
+        <path d="M -2 220 L 368 220 C 370.76142 220 373 222.23858 373 225 L 373 424 C 373 426.7614 370.76142 429 368 429 L -2 429 C -4.761424 429 -7 426.7614 -7 424 L -7 225 C -7 222.23858 -4.761424 220 -2 220 Z" fill="#222645"/>
+        <path d="M -2 220 L 368 220 C 370.76142 220 373 222.23858 373 225 L 373 424 C 373 426.7614 370.76142 429 368 429 L -2 429 C -4.761424 429 -7 426.7614 -7 424 L -7 225 C -7 222.23858 -4.761424 220 -2 220 Z" stroke="#8d96d5" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"/>
+      </g>
+      <g id="Graphic_166">
+        <text transform="translate(10 235)" fill="white">
+          <tspan font-family="Roboto Mono" font-size="16" fill="white" x="0" y="17" xml:space="preserve">pub fn safe_wrapper(…) {</tspan>
+          <tspan font-family="Roboto Mono" font-size="16" fill="white" x="0" y="59" xml:space="preserve">  // SAFETY: &lt;proof of obligation&gt;</tspan>
+          <tspan font-family="Roboto Mono" font-size="16" fill="white" x="0" y="185" xml:space="preserve">}</tspan>
+        </text>
+      </g>
+      <g id="Graphic_165">
+        <path d="M 30 315 L 336 315 C 338.76142 315 341 317.23858 341 320 L 341 388 C 341 390.76142 338.76142 393 336 393 L 30 393 C 27.238576 393 25 390.76142 25 388 L 25 320 C 25 317.23858 27.238576 315 30 315 Z" fill="url(#Obj_Gradient)"/>
+        <path d="M 30 315 L 336 315 C 338.76142 315 341 317.23858 341 320 L 341 388 C 341 390.76142 338.76142 393 336 393 L 30 393 C 27.238576 393 25 390.76142 25 388 L 25 320 C 25 317.23858 27.238576 315 30 315 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"/>
+        <text transform="translate(30 320)" fill="white">
+          <tspan font-family="Roboto Mono" font-size="16" fill="white" x="0" y="17" xml:space="preserve">`unsafe` interior {</tspan>
+          <tspan font-family="Roboto Mono" font-size="16" fill="white" x="0" y="38" xml:space="preserve">  *(&amp;x as *u32) = …;</tspan>
+          <tspan font-family="Roboto Mono" font-size="16" fill="white" x="0" y="59" xml:space="preserve">}</tspan>
+        </text>
+      </g>
+      <g id="Graphic_169">
+        <text transform="translate(423 289)" fill="white">
+          <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="white" x="0" y="15" xml:space="preserve">Unsafe Cores</tspan>
+          <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="white" x="0" y="34" xml:space="preserve">the “gooey center”</tspan>
+          <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="white" x="0" y="53" xml:space="preserve">no Rust borrow-check applied here</tspan>
+        </text>
+      </g>
+      <g id="Graphic_170">
+        <text transform="translate(423 158)" fill="white">
+          <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="white" x="0" y="15" xml:space="preserve">Safe Interface</tspan>
+          <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="white" x="0" y="34" xml:space="preserve">the “hard candy shell”</tspan>
+          <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="white" x="0" y="53" xml:space="preserve">ensures to be sound regarding the safe Rust calls</tspan>
+        </text>
+      </g>
+      <g id="Line_171">
+        <path d="M 341 334.5 L 374.5 301 L 418 300.75" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_172">
+        <path d="M 319.71545 212 L 373 170 L 418 169.75" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_173">
+        <text transform="translate(423 233)" fill="white">
+          <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="white" x="0" y="15" xml:space="preserve">Safety Contract</tspan>
+          <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="white" x="0" y="34" xml:space="preserve">Programmers must discharge this manually</tspan>
+        </text>
+      </g>
+      <g id="Line_174">
+        <path d="M 341.45312 279.75 L 382 241 L 418 240" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_175">
+        <path d="M -12.5 153 L 380.5 153 C 381.32843 153 382 153.67157 382 154.5 L 382 154.5 C 382 155.32843 381.32843 156 380.5 156 L -12.5 156 C -13.328427 156 -14 155.32843 -14 154.5 L -14 154.5 C -14 153.67157 -13.328427 153 -12.5 153 Z" fill="#c8e9c4"/>
+      </g>
+      <g id="Line_176">
+        <line x1="184" y1="156" x2="184" y2="212" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Graphic_178">
+        <text transform="translate(423 80)" fill="white">
+          <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="white" x="0" y="15" xml:space="preserve">Module Boundary</tspan>
+          <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="white" x="0" y="34" xml:space="preserve">No `unsafe` keyword in signature</tspan>
+          <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="white" x="0" y="53" xml:space="preserve">Caller bears ZERO proof obligation</tspan>
+        </text>
+      </g>
+      <g id="Line_177">
+        <path d="M 304 153 L 374.794 93 L 418 91.75" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_179">
+        <text transform="translate(-9 43)" fill="white">
+          <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="white" x="0" y="15" xml:space="preserve">Rust Compiler Establishes:</tspan>
+          <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="white" x="0" y="53" xml:space="preserve">Safe (meaning no `unsafe` used) code implies </tspan>
+          <tspan font-family="Roboto Condensed" font-style="italic" font-size="16" fill="white" x="0" y="72" xml:space="preserve">soundness (meaning no UB can ever occur).</tspan>
+        </text>
+      </g>
+      <g id="Graphic_180">
+        <text transform="translate(-29 -4)" fill="white">
+          <tspan font-family="Roboto Condensed" font-weight="bold" font-size="16" fill="white" x="0" y="15" xml:space="preserve">Safe World</tspan>
+        </text>
+      </g>
+      <g id="Graphic_181">
+        <path d="M 17.24119 136.74908 L 25.43271 131.01331 L 30.5949 138.38568 L 34.69066 135.5178 L 32.80848 150.26424 L 18.307618 146.98933 L 22.403379 144.12145 Z" fill="#c8e9c4"/>
+        <path d="M 17.24119 136.74908 L 25.43271 131.01331 L 30.5949 138.38568 L 34.69066 135.5178 L 32.80848 150.26424 L 18.307618 146.98933 L 22.403379 144.12145 Z" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"/>
+      </g>
+      <g id="Graphic_182">
+        <path d="M 281.00962 131.17949 L 289.66987 136.1795 L 285.16987 143.97372 L 289.5 146.47372 L 275.33975 151 L 272.1795 136.47372 L 276.50962 138.97372 Z" fill="#c8e9c4"/>
+        <path d="M 281.00962 131.17949 L 289.66987 136.1795 L 285.16987 143.97372 L 289.5 146.47372 L 275.33975 151 L 272.1795 136.47372 L 276.50962 138.97372 Z" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"/>
+      </g>
+    </g>
+  </g>
+</svg>

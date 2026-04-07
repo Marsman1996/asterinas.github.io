@@ -533,9 +533,10 @@ p img {
  * Syntax highlighting styles
  */
 
- p .language-plaintext {
+/* Inline Rouge spans use .language-plaintext; list items often omit <p>, so scope to main */
+main .language-plaintext {
   background: rgba(255, 255, 255, 0.1);
- }
+}
 
 .highlight pre {
   background: rgba(255, 255, 255, 0.06);
@@ -551,6 +552,22 @@ p img {
 
 .highlight code {
   font-size: .24rem;
+  /* Base text when spans do not set a color (dark theme body is too dim for code) */
+  color: #c5c8d6;
+}
+
+/* Rouge Name.Decorator — #[...] and attribute innards; was missing → inherited main #7F818C */
+.highlight .nd {
+  color: #a8b8e0;
+}
+
+/* Plain identifiers (Rust .n) — explicit so they stay readable on dark background */
+.highlight .n {
+  color: #c5c8d6;
+}
+
+.highlight .p {
+  color: #b0b3c4;
 }
 
 .highlight .c {
