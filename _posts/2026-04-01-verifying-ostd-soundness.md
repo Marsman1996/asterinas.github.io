@@ -166,34 +166,36 @@ To see this in practice, let's look at `metaregion_sound`, the most critical sys
 impl<C: PageTableConfig> EntryOwner<C> {
 
 pub open spec fn metaregion_sound(self, regions: MetaRegionOwners) -> bool {
-    let idx = frame_to_index(self.meta_slot_paddr().unwrap());
-    let slot_owner = regions.slot_owners[idx];
-    if self.is_node() {
-        &&& slot_owner.inner_perms.ref_count.value() != REF_COUNT_UNUSED
-        &&& slot_owner.raw_count == self.expected_raw_count()
-        &&& slot_owner.self_addr == self.node.unwrap().meta_perm.addr()
-        &&& self.node.unwrap().meta_perm.points_to.value().wf(slot_owner)
-        // Each node has a unique path within the tree
-        &&& regions.slot_owners[idx].path_if_in_pt == Some(self.path)
-    } else if self.is_frame() {
-        // Each frame has a globally tracked permission object,
-        // in case it is shared.
-        &&& regions.slots.contains_key(idx)
-        &&& regions.slots[idx].addr() == meta_addr(idx)
-        &&& regions.slots[idx].is_init()
-        &&& regions.slots[idx].value().wf(slot_owner)
-        &&& slot_owner.inner_perms.ref_count.value() != REF_COUNT_UNUSED
-    } else {
-        true
-    }
+        if self.is_node() {
+            let idx = frame_to_index(self.meta_slot_paddr().unwrap());
+            &&& regions.ref_count(idx) != REF_COUNT_UNUSED
+            &&& 0 < regions.ref_count(idx) <= REF_COUNT_MAX
+            &&& regions.slots[idx].value().wf(regions.slot_owners[idx])
+            &&& regions.slot_owners[idx].paths_in_pt == set![self.path]
+            &&& self.node.unwrap().metaregion_sound_node(regions)
+            ... // a few clauses omitted
+        } else if self.is_frame() {
+            let idx = frame_to_index(self.meta_slot_paddr().unwrap());
+            &&& regions.slots[idx].value().wf(regions.slot_owners[idx])
+            &&& regions.slot_owners[idx].usage != PageUsage::MMIO ==> {
+                &&& regions.ref_count(idx) != REF_COUNT_UNUSED
+                &&& 0 < regions.ref_count(idx) <= REF_COUNT_MAX
+            }
+            &&& regions.slot_owners[idx].paths_in_pt.contains(self.path)
+            &&& regions.slot_owners[idx].usage != PageUsage::PageTable
+            &&& self.frame_sub_pages_valid(regions)
+            ... // a few clauses omitted
+        } else {
+            true
+        }
 }
 ... // more specs and proofs omitted
 }
 ```
 
-The [`path_if_in_pt`](https://asterinas.github.io/vostd/ostd/specs/mm/frame/meta_owners/struct.MetaSlotOwner.html#structfield.path_if_in_pt) clause, present only in the `is_node()` branch, ensures that each page table **node** corresponds to exactly one position in the tree. Note that this condition does not apply to mapped frames (`.is_frame()`). Because the same physical frame may legitimately be mapped to multiple virtual addresses simultaneously, this does not cause UB from the kernel's perspective. Soundness proofs do not let us place obligations on the caller, our model needs to be flexible enough to specify even erroneous (but well-defined) calls.
+The [`paths_if_in_pt`](https://asterinas.github.io/vostd/ostd/specs/mm/frame/meta_owners/struct.MetaSlotOwner.html#structfield.path_if_in_pt) clause, present only in the `is_node()` branch, ensures that each page table **node** corresponds to exactly one position in the tree. The equivalent condition for mapped frames (`.is_frame()`) is weaker, only requiring that the current entry's path be contained in the set. Because the same physical frame may legitimately be mapped to multiple virtual addresses simultaneously, this does not cause UB from the kernel's perspective. Soundness proofs do not let us place obligations on the caller; our model needs to be flexible enough to specify even erroneous (but well-defined) calls.
 
-Collectively, system invariants like metaregion_sound define the strict rules that every public API must preserve. This is exactly why verifying isolated functions is insufficient. Even if individual functions are completely correct in a vacuum, any unverified code touching the same data structures could silently violate these shared invariants, thus collapsing the entire system's proof. To guarantee true soundness, the module must be verified as a cohesive whole.
+Collectively, system invariants like metaregion_sound define the strict rules that every public API must preserve. This is exactly why verifying isolated functions is insufficient. Even if individual functions are completely correct in a vacuum, any unverified code touching the same data structures could silently violate these shared invariants, thus collapsing the entire system's proof. To guarantee true soundness, the module must be verified as a cohesive whole. We check the final soundness property by embedding the specifications of verified functions in a state machine, which may take arbitrary steps using the specification of any function in any order.
 
 ## Does the Methodology Scale?
 
@@ -201,13 +203,13 @@ A verification approach is only practical if it can be executed without a massiv
 
 We began a year ago with a proof of concept, verifying selected properties of individual functions but leaving the bulk of the code unverified. After taking lessons from that phase and scaling up our efforts, in just over a year we have expanded to cover the entire virtual memory subsystem of the memory management (`mm`) module, from raw physical frame allocation at the bottom to virtual address space mapping at the top. Recall that horizontal composition is vital for proving soundness: verifying an entire subsystem is much more valuable than disconnected functions. Meanwhile, a parallel project called [CortenMM](https://dl.acm.org/doi/10.1145/3731569.3764836) has verified the complex concurrent correctness of the page table's fine-grained locking, and has been published in SOSP '25.
 
-As a proxy for cost, historically, formal verification requires about 20 lines of mathematical proof for every 1 line of code (a 1:20 ratio). This immense cost has blocked widespread industrial adoption. **We reduced this ratio to below 1:4.**
+As a proxy for cost, historically, formal verification requires about 20 lines of mathematical proof for every 1 line of code (a 1:20 ratio). This immense cost has blocked widespread industrial adoption. **We reduced this ratio to roughly 1:5.**
 
 This efficiency comes from two factors: Verus’ automated SMT solver effortlessly handles routine mathematical obligations in the background, and OSTD’s tightly scoped, modular architecture prevents proof complexity from spiraling out of control.
 
 Advances in AI help us scale even faster. Because proof annotations often follow predictable patterns derived from the system model, AI can be very effective in helping the SMT solver handle proofs that previously would require human guidance. To this end we built **KVerus**, an AI-assisted tool that automatically generates a growing fraction of our proofs. Crucially, AI assistance accelerates the writing process but does not alter the trustworthiness of the results. Every single proof generated by KVerus is strictly checked and validated by Verus's mathematical solver. AI frees our engineers to focus on the big picture questions: specifications, system models, and proof strategy.
 
-Another common critique of formal verification is that proofs quickly become outdated as code evolves. Verification projects are usually static, pinned to a particular version of the target software. We began our verification on OSTD v0.15 and are currently tracking v0.16.2. Thanks to our modular invariant structure and KVerus's ability to help repair proofs, updating our verification alongside codebase changes has proven quite manageable. Our ultimate goal is continuous verification: updating proofs in the same pull request as the code they cover.
+Another common critique of formal verification is that proofs quickly become outdated as code evolves. Verification projects are usually static, pinned to a particular version of the target software. We began our verification on OSTD v0.15 and are currently tracking v0.16.0. Thanks to our modular invariant structure and KVerus's ability to help repair proofs, updating our verification alongside codebase changes has proven quite manageable. Our ultimate goal is continuous verification: updating proofs in the same pull request as the code they cover.
 
 ## From Promise to Proof
 
