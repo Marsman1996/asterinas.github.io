@@ -1,3 +1,6 @@
+---
+---
+
 /**
  * Reset some basic elements
  */
@@ -159,7 +162,7 @@ a {
 .tops {
     width: 100%;
     max-width: 19.2rem;
-    background-image: url("/assets/images/posts.png");
+    background-image: url("{{ '/assets/images/posts.png' | relative_url }}");
     background-size: 75% 6.6rem;
     background-repeat: no-repeat;
     background-position: 50% 0%;

@@ -71,7 +71,7 @@ Though simplified, these definitions reflect key design points:
 
 Our ultimate goal is to formally verify the correctness and soundness of these abstractions. The diagram below summarizes our verification plan and progress:
 
-![Verification Overview](/assets/images/2025-02-13-post-verification-overview.png)
+![Verification Overview]({{ '/assets/images/2025-02-13-post-verification-overview.png' | relative_url }})
 
 Within these four layers of abstractions (in blue), we have identified 14 high-priority verification targets, of which 11 (in green) are verified and 3 (in yellow) remain. In total, we have produced roughly 6K lines of specification code and 2K lines of proof code for about 2K lines of executable code.
 

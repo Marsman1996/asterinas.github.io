@@ -13,7 +13,7 @@ Rust's `unsafe` mechanism is an escape hatch for low-level code, and in kernel d
 
 The standard way to bridge the gap is to carefully encapsulate the `unsafe` code into a library, allowing the caller to abstract away the implementation details. But an abstraction is only as good as your confidence in it. How can you actually *trust* that the safe API built around your `unsafe` code is perfectly sound for every possible caller, in every possible state? Is it sufficient to dot the code with '`SAFETY: ...`' comments explaining why each use of `unsafe` will not go wrong? No. Even when such comments are detailed and precise, they cannot possibly exhaustively cover the space of possible states that the library as a whole could reach.
 
-<img src="/assets/images/verifying-ostd-soundness/tootsie_pop.png" alt="Tootsie Pop Model" style="max-width: 800px; width: 100%; height: auto;">
+<img src="{{ '/assets/images/verifying-ostd-soundness/tootsie_pop.png' | relative_url }}" alt="Tootsie Pop Model" style="max-width: 800px; width: 100%; height: auto;">
 
 **[Asterinas](https://github.com/asterinas/asterinas)** exemplifies the importance of sound encapsulation. Its **[framekernel architecture](https://asterinas.github.io/book/kernel/the-framekernel-architecture.html)** isolates the raw dangerous primitives—physical memory management, synchronization, hardware configuration, and so on—from the rest of the kernel, in the Operating System Standard Library ([OSTD](https://asterinas.github.io/book/ostd/index.html)). Kernel developers working on top of OSTD have access to the powerful abstractions and guarantees of safe Rust. But those guarantees can only be trusted if the OSTD interface is sound! A bug in OSTD isn't just a localized issue; it compromises the safety guarantees of the entire rest of the kernel.
 
@@ -68,17 +68,17 @@ fn write_pte(&mut self, idx: usize, pte: C::E)
 ```
 -->
 
-<img src="/assets/images/verifying-ostd-soundness/write_pte_spec.png" alt="write_pte() function specification" style="max-width: 700px; width: 95%; height: auto;">
+<img src="{{ '/assets/images/verifying-ostd-soundness/write_pte_spec.png' | relative_url }}" alt="write_pte() function specification" style="max-width: 700px; width: 95%; height: auto;">
 
 ### Vertical Composition
 
 Now all calls to `write_pte` from anywhere in the verified codebase will have these `requires` conditions checked at compile time. At the same time, `write_pte` has obligations of its own (`ensures`). It maintains a weakened invariant, and sets the value of memory at the designated index to match the parameter.
 
-<img src="/assets/images/verifying-ostd-soundness/write_pte.png" alt="write_pte() function specification" style="max-width: 700px; width: 95%; height: auto;">
+<img src="{{ '/assets/images/verifying-ostd-soundness/write_pte.png' | relative_url }}" alt="write_pte() function specification" style="max-width: 700px; width: 95%; height: auto;">
 
 In addition, the postconditions of `write_pte` allow its caller `replace` to satisfy its own obligations, and on down the call chain. So, function-level specifications are *vertically composed* as a matter of Verus' fundamental design.
 
-<img src="/assets/images/verifying-ostd-soundness/soundness_correctness.png" alt="Soundness and Correctness" style="max-width: 800px; width: 100%; height: auto;">
+<img src="{{ '/assets/images/verifying-ostd-soundness/soundness_correctness.png' | relative_url }}" alt="Soundness and Correctness" style="max-width: 800px; width: 100%; height: auto;">
 
 Properties of this kind, relating a function's inputs to its outputs in a vertical composition between callers and callees, are commonly called *correctness* properties. Soundness and correctness are deeply intertwined. Even if our goal is not necessarily to prove correctness for the entire system, proving *anything* about higher level functions depends on the correctness of lower level functions. In this case, `Entry::replace` is called by `CursorMut::replace_cur_entry`, which is called by [`CursorMut::map`](https://asterinas.github.io/vostd/ostd/mm/vm_space/struct.CursorMut.html#method.map). The soundness proof for `map` depends on this entire chain of logic. Because lower-level proofs are "consumed" by higher-level ones, we are motivated to make their specifications as precise as possible.
 
@@ -128,7 +128,7 @@ The first step to proving the theorem above is breaking down a trace into indivi
 
 By induction, if the system starts in a valid state, and every possible API call preserves the invariants on objects that it interacts with, then the state is always valid between calls. This allows us to break the verification of a system-level property into a series of *correctness* proofs. The invariants are the glue that hold them together in a *horizontal composition*.
 
-<img src="/assets/images/verifying-ostd-soundness/horizontal.png" alt="Soundness as Horizontal Composition" style="max-width: 800px; width: 100%; height: auto;">
+<img src="{{ '/assets/images/verifying-ostd-soundness/horizontal.png' | relative_url }}" alt="Soundness as Horizontal Composition" style="max-width: 800px; width: 100%; height: auto;">
 
 To see this in practice, let's look at selected clauses from `metaregion_sound`, the most critical system invariant in the memory management (`mm`) module. Below is an abbreviated version. This rule is defined on an [`EntryOwner`](https://asterinas.github.io/vostd/ostd/specs/mm/page_table/node/entry_owners/struct.EntryOwner.html#method.metaregion_sound), the abstract ghost state associated with an entry in a page table. It asserts that the associated page table entry matches the global physical memory records ([`MetaRegionOwners`](https://asterinas.github.io/vostd/ostd/specs/mm/frame/meta_region_owners/struct.MetaRegionOwners.html)), which live in a special metadata region.
 
@@ -176,7 +176,7 @@ To recap where we stand: we have verified soundness of a significant subset of O
 
 Outside of CortenMM we verify the system as a sequential program, with further concurrent verification a future goal. We are currently expanding into verifying the synchronization primitives in `sync`.
 
-<img src="/assets/images/verifying-ostd-soundness/subset.png" alt="Verified Subset of OSTD" style="max-width: 800px; width: 100%; height: auto;">
+<img src="{{ '/assets/images/verifying-ostd-soundness/subset.png' | relative_url }}" alt="Verified Subset of OSTD" style="max-width: 800px; width: 100%; height: auto;">
 
 We verified part of a kernel with this approach, but very little of it is kernel-specific. Any Rust project relying on a complex `unsafe` core faces similar challenges, and can be approached in a similar way:
 

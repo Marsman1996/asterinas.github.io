@@ -45,7 +45,7 @@ This **language-based, intra-kernel privilege separation** means that the memory
 
 A comparison between the three OS architectures is summarized in the following figure (extracted from the paper):
 
-![Kernel Architecture Comparison](/assets/images/monolithic-kernel-vs-microkernel-vs-framekernel.png)
+![Kernel Architecture Comparison]({{ '/assets/images/monolithic-kernel-vs-microkernel-vs-framekernel.png' | relative_url }})
 (TCB is short for Trusted Computing Base, which is the code responsible for kernel memory safety.)
 
 ## Your "Hello, World" Framekernel
@@ -54,7 +54,7 @@ Let's see a real example: handling system calls.
 
 As mentioned, the OS framework for Asterinas is called OSTD. We position it as Rust's (unofficial) standard library for OS development, and it has been published to [crates.io](https://crates.io/crates/ostd). OSTD has been used for developing Asterinas and may be used for more Rust-based OSes. The following diagram (extracted from the paper) shows how system call loop may be written entirely in safe Rust using the API of OSTD.
 
-![Handling System Calls with OSTD](/assets/images/handling-system-calls-with-ostd.png)
+![Handling System Calls with OSTD]({{ '/assets/images/handling-system-calls-with-ostd.png' | relative_url }})
 
 This example uses four safe abstractions from OSTD:
 

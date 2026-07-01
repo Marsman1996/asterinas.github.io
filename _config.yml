@@ -22,9 +22,9 @@ title: Asterinas
 email: tate.thl@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Asterinas is an open-source community to advance Rust-based OSes
-baseurl: "" # the subpath of your site, e.g. /blog
-url: asterinas.github.io
-github_username: asterinas
+baseurl: "/asterinas.github.io" # the subpath of your site, e.g. /blog
+url: "https://marsman1996.github.io"
+github_username:  Marsman1996
 
 # Build settings
 theme: minima

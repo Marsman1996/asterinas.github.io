@@ -1,3 +1,6 @@
+---
+---
+
 /**
  * Reset some basic elements
  */
@@ -261,7 +264,7 @@ a:hover {
 /* 页面背景 */
 .tops {
     width: 100%;
-    background-image: url("/assets/images/post-mobile.png");
+    background-image: url("{{ '/assets/images/post-mobile.png' | relative_url }}");
     background-size: 100% 18.538rem;
     background-repeat: no-repeat;
     background-position: center top -1.75rem;

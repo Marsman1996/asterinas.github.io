@@ -1,3 +1,6 @@
+---
+---
+
 /**
  * Reset some basic elements
  */
@@ -242,7 +245,7 @@ a {
 /* 页面背景 */
 .tops {
     width: 100%;
-    background-image: url("/assets/images/blog-mobile.png");
+    background-image: url("{{ '/assets/images/blog-mobile.png' | relative_url }}");
     background-size: 100% 16.6rem;
     background-repeat: no-repeat;
     background-position: 100% 0%;

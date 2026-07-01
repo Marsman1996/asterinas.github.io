@@ -1,3 +1,6 @@
+---
+---
+
 /**
  * Reset some basic elements
  */
@@ -160,7 +163,7 @@
  .tops {
      width: 100%;
      max-width: 19.2rem;
-     background-image: url("/assets/images/beijing.jpg");
+     background-image: url("{{ '/assets/images/beijing.jpg' | relative_url }}");
      background-size: 100% 10.34rem;
      background-repeat: no-repeat;
  }
@@ -659,7 +662,7 @@
  .tb-get-titleBox {
      width: 3.103rem;
      height: 5.66rem;
-     background-image: url("/assets/images/unite.png");
+     background-image: url("{{ '/assets/images/unite.png' | relative_url }}");
      background-size: 100% 100%;
      background-repeat: no-repeat;
      display: flex;

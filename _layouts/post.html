@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title }}</title>
-  <link rel="shortcut icon" type="image/x-icon" href="/assets/images/Asterinas icon (in blue).svg">
+  <link rel="shortcut icon" type="image/x-icon" href="{{ '/assets/images/Asterinas icon (in blue).svg' | relative_url }}">
   <link rel="stylesheet" href="/css/post.css" media="screen and (min-width: 769px)">
   <link rel="stylesheet" href="/css/post-mobile.css" media="screen and (max-width: 768px)">
   <script>
@@ -27,7 +27,7 @@
   <div class="header">
     <div class="hdImgBox">
       <a href="/">
-        <img src="/assets/images/homeIcon.png" alt="img">
+        <img src="{{ '/assets/images/homeIcon.png' | relative_url }}" alt="img">
       </a>
     </div>
     <div class="hdLink">
@@ -38,7 +38,7 @@
     </div>
     <div class="hdLinks">
       <div style="cursor: pointer;">
-        <img src="/assets/images/navigation.jpg" alt="img">
+        <img src="{{ '/assets/images/navigation.jpg' | relative_url }}" alt="img">
       </div>
       <div class="tabItem" flot="false">
         <div data-tab="1" class="tab">Home</div>
@@ -76,16 +76,16 @@
       <!-- <div class="footer-content">
         <div class="footer-img">
           <a href="/">
-            <img class="footer-imgOne" src="/assets/images/twitter.png" alt="img">
+            <img class="footer-imgOne" src="{{ '/assets/images/twitter.png' | relative_url }}" alt="img">
           </a>
           <a href="/">
-            <img class="footer-imgTwo" src="/assets/images/flow.png" alt="img">
+            <img class="footer-imgTwo" src="{{ '/assets/images/flow.png' | relative_url }}" alt="img">
           </a>
           <a href="/">
-            <img class="footer-imgTwo" src="/assets/images/photo.png" alt="img">
+            <img class="footer-imgTwo" src="{{ '/assets/images/photo.png' | relative_url }}" alt="img">
           </a>
           <a href="/">
-            <img class="footer-imgThree" src="/assets/images/email.png" alt="img">
+            <img class="footer-imgThree" src="{{ '/assets/images/email.png' | relative_url }}" alt="img">
           </a>
         </div>
         <div class="footer-title">

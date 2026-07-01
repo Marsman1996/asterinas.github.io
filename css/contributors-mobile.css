@@ -1,3 +1,6 @@
+---
+---
+
 /**
  * Reset some basic elements
  */
@@ -290,7 +293,7 @@ a {
 .img-title {
     height: 14.7rem;
     margin-top: 2rem;
-    background-image: url("/assets/images/xingxing.png");
+    background-image: url("{{ '/assets/images/xingxing.png' | relative_url }}");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     display: flex;
