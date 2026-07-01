@@ -482,7 +482,8 @@ p img {
  * Syntax highlighting styles
  */
 
-p .language-plaintext {
+/* Inline Rouge spans use .language-plaintext; list items often omit <p>, so scope to main */
+main .language-plaintext {
     background: rgba(255, 255, 255, 0.1);
 }
 
@@ -506,6 +507,19 @@ p .language-plaintext {
     /* 允许长单词在必要时断行 */
     overflow-wrap: break-word;
     /* 同上，确保兼容性 */
+    color: #c5c8d6;
+}
+
+.highlight .nd {
+    color: #a8b8e0;
+}
+
+.highlight .n {
+    color: #c5c8d6;
+}
+
+.highlight .p {
+    color: #b0b3c4;
 }
 
 .highlight .c {
@@ -786,4 +800,10 @@ p .language-plaintext {
     width: 100%;
     height: 100%;
     border: 0; /* Ensures no extra border from the iframe */
+}
+
+mjx-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
 }
